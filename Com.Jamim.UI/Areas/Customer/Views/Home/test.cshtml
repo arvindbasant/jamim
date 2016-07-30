@@ -1,0 +1,1114 @@
+﻿@model Com.Jamim.Controllers.Customer.ViewModels.ProductCatalog.HomePageView
+@using Com.Jamim.Services.Customer.ViewModels
+@using Com.Jamim.Controllers.Customer.ViewModels
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Shop</title>
+
+
+    <link href="~/Content/jquery-ui.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery-ui.min.js"></script>
+
+    <script type="text/javascript">
+
+
+    </script>
+    <style type="text/css">
+        body {
+            /*font-family: 'Segoe UI';*/
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu {
+            width: 190px;
+            margin: 0;
+            padding: 0;
+            padding-left: 30px;
+            position: fixed;
+        }
+
+            .nav-menu > li {
+                width: 130px;
+                height: 24px;
+                margin-bottom: 1px;
+                /*border-left: 3px solid #ff6a00;
+                border-bottom: 1px solid #ff6a00;*/
+                /*transition: all 0.2s ease;*/
+                float: left;
+                list-style-type: none;
+                padding-right: 20px;
+                padding-left: 5px;
+                color: black;
+                background: url("../../Images/menu-nav.png") no-repeat right;
+            }
+
+                .nav-menu > li:nth-child(1) {
+                    border-left: 5px solid #1c758a;
+                }
+
+                    .nav-menu > li:nth-child(1):hover {
+                        color: white;
+                        background: url("../../Images/menu-nav-hover.png") no-repeat right #1c758a;
+                        box-shadow: 3px 3px 4px #000000;
+                    }
+
+                .nav-menu > li:nth-child(2) {
+                    border-left: 5px solid #94424f;
+                }
+
+                    .nav-menu > li:nth-child(2):hover {
+                        color: white;
+                        background: url("../../Images/menu-nav-hover.png") no-repeat right #94424f;
+                        box-shadow: 3px 3px 4px #000000;
+                    }
+
+                .nav-menu > li:nth-child(3) {
+                    border-left: 5px solid #c78d46;
+                }
+
+                    .nav-menu > li:nth-child(3):hover {
+                        color: white;
+                        background: url("../../Images/menu-nav-hover.png") no-repeat right #c78d46;
+                        box-shadow: 3px 3px 4px #000000;
+                    }
+
+                .nav-menu > li:nth-child(4) {
+                    border-left: 5px solid #cf5044;
+                }
+
+                    .nav-menu > li:nth-child(4):hover {
+                        color: white;
+                        background: url("../../Images/menu-nav-hover.png") no-repeat right #cf5044;
+                        box-shadow: 3px 3px 4px #000000;
+                    }
+
+                .nav-menu > li:nth-child(5) {
+                    border-left: 5px solid #699c52;
+                }
+
+                    .nav-menu > li:nth-child(5):hover {
+                        color: white;
+                        background: url("../../Images/menu-nav-hover.png") no-repeat right #699c52;
+                        box-shadow: 3px 3px 4px #000000;
+                    }
+
+                .nav-menu > li:nth-child(6) {
+                    border-left: 5px solid #644172;
+                }
+
+                    .nav-menu > li:nth-child(6):hover {
+                        color: white;
+                        background: url("../../Images/menu-nav-hover.png") no-repeat right #644172;
+                        box-shadow: 3px 3px 4px #000000;
+                    }
+
+                .nav-menu > li:nth-child(7) {
+                    border-left: 5px solid #49a88f;
+                }
+
+                    .nav-menu > li:nth-child(7):hover {
+                        color: white;
+                        background: url("../../Images/menu-nav-hover.png") no-repeat right #49a88f;
+                        box-shadow: 3px 3px 4px #000000;
+                    }
+
+                .nav-menu > li:nth-child(8) {
+                    border-left: 5px solid #2b2828;
+                }
+
+                    .nav-menu > li:nth-child(8):hover {
+                        color: white;
+                        background: url("../../Images/menu-nav-hover.png") no-repeat right #2b2828;
+                        box-shadow: 3px 3px 4px #000000;
+                    }
+
+                .nav-menu > li a {
+                    font-family: 'Segoe UI';
+                    font-size: 0.85em;
+                    text-transform: lowercase;
+                    text-decoration: none;
+                    /*font-weight: bold;*/
+                    color: inherit;
+                }
+
+
+        .menu-tile {
+            width: 800px;
+            height: 400px;
+            display: none;
+            background-color: #808080;
+            position: absolute;
+            left: 190px;
+            top: 0;
+            z-index: 1;
+            box-shadow: 3px 3px 4px #000000;
+        }
+
+        .menu-wrapper {
+            /*box-shadow: 3px 3px 4px #000000;
+             width:80%;
+             height:450px;*/
+            position: absolute;
+            margin-top: 85px;
+            margin-left: -1px;
+            z-index: 2;
+        }
+
+        .hide {
+        }
+
+        .show {
+            display: block;
+        }
+
+        .color1 {
+            background-color: #1c758a;
+        }
+
+        .color2 {
+            background-color: #94424f;
+        }
+
+        .color3 {
+            background-color: #c78d46;
+        }
+
+        .color4 {
+            background-color: #cf5044;
+        }
+
+        .color5 {
+            background-color: #699c52;
+        }
+
+        .color6 {
+            background-color: #644172;
+        }
+
+        .color7 {
+            background-color: #49a88f;
+        }
+
+        .color8 {
+            background-color: #2b2828;
+        }
+
+        .sub-menu-title {
+            width: 98%;
+            margin-left: 1%;
+            height: 40px;
+            border-bottom: 1px solid white;
+            font-weight: 200;
+            font-size: 1.6em;
+        }
+
+            .sub-menu-title span {
+                padding-left: 20px;
+            }
+
+
+
+        .submenu-wrapper {
+            width: 25%;
+            height: 85%;
+            padding-top: 10px;
+            padding-bottom: 5px;
+            float: left;
+        }
+
+            .submenu-wrapper > ul {
+                margin: 0;
+                padding: 0;
+            }
+
+                .submenu-wrapper > ul > li {
+                    list-style-type: none;
+                    padding-left: 10px;
+                }
+
+                    .submenu-wrapper > ul > li > a {
+                        font-family: 'Segoe UI';
+                        font-size: 0.75em;
+                        letter-spacing: 0.3px;
+                        text-transform: lowercase;
+                        text-decoration: none;
+                        font-weight: 400;
+                        color: #e1e0e0;
+                        cursor: pointer;
+                    }
+
+                        .submenu-wrapper > ul > li > a:hover {
+                            color: #fff;
+                        }
+
+        .img-submenu-grocery {
+            width: 70%;
+            height: 40%;
+            float: left;
+            margin-top: 10%;
+            border-radius: 50%;
+            background: url("../../Images/grocery-submenu.jpg") no-repeat center #fff;
+            box-shadow: -2px 2px rgba(0,0,0,0.6);
+        }
+
+        .img-small-submenu-grocery {
+            width: 50%;
+            height: 30%;
+            margin-right: 10%;
+            float: right;
+            border-radius: 50%;
+            background: url("../../Images/grocery-submenu-small.jpg") no-repeat center #fff;
+            box-shadow: -2px 2px rgba(0,0,0,0.6);
+        }
+
+        .product-wrapper {
+            width: 60%;
+            float: left;
+            margin-left: 250px;
+            /*background-color: gray;*/
+            height: 1400px;
+            margin-top: 85px;
+        }
+
+        header {
+            width: 100%;
+            height: 45px;
+            background-color: #1c758a;
+            position: fixed;
+            z-index: 2;
+        }
+
+        /*header
+        {
+            position: relative;
+            width: 100%;
+            height: 45px;
+            line-height: 60px;
+            background: #1c758a;
+            padding-left: 20px;
+        }
+
+            header.clone
+            {
+                position: fixed;
+                 height: 45px;
+                top: -50px;
+                left: 0;
+                right: 0;
+                z-index: 999;
+                transition: 0.4s top cubic-bezier(.3,.73,.3,.74);
+                box-shadow: 0px 2px 2px #000;
+            }*/
+
+        /*body.down header.clone
+        {
+            top: 0;
+        }*/
+
+
+
+
+        .item-wrapper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .item-row {
+            width: 100%;
+            height: auto;
+            display: table;
+        }
+
+        .item {
+            width: 23.5%;
+            height: 240px;
+            float: left;
+            margin-right: 1%;
+            margin-bottom: 1%;
+            border: 2px solid #eeeeee;
+        }
+
+            .item:hover {
+                border: 2px solid #ffebd1;
+            }
+
+        .item-img {
+            background: url("../../Images/horlicks1.jpg") no-repeat center;
+            width: 100%;
+            height: 145px;
+        }
+
+        .item-desc {
+            width: 100%;
+            height: 60px;
+        }
+
+        .item-widget {
+            width: 100%;
+            height: 35px;
+        }
+
+        .price {
+            background: url("../../Images/rupee-symbol.png") no-repeat left;
+            padding-left: 18px;
+            font-size: 1.2em;
+            font-weight: 500;
+            margin-left: 10px;
+        }
+
+        .item-detail {
+            margin-left: 10px;
+            font-size: 0.8em;
+            font-weight: 500;
+            color: #111111;
+        }
+
+        .qty-spinner {
+            width: 24px;
+            font-family: 'Segoe UI';
+            font-size: 0.9em;
+            font-weight: 500;
+            height: 18px;
+            border-radius: 0;
+            outline: none;
+            margin-left: 3px;
+            z-index: 0;
+            text-align: center;
+            vertical-align: text-bottom;
+        }
+
+        .ui-icon-triangle-1-n:hover, .ui-icon-triangle-1-s:hover {
+            background-color: #2b2828;
+        }
+
+        .ui-state-hover {
+            border-radius: 0;
+        }
+
+        .custom-ui-spinner {
+            border: 2px solid #c78d46;
+            box-shadow: 1px 1px 1px #000;
+            border-radius: 2px;
+        }
+
+            .custom-ui-spinner:hover {
+                border: 2px solid #2b2828;
+            }
+
+        .details-button {
+            background: url("../../Images/details-white-hover.png") no-repeat left #ce8f43;
+            padding-left: 18px;
+            font-size: 0.9em;
+            color: #eeeeee;
+            /*background-color: transparent;*/
+            height: 26.5px;
+            border: none;
+            /*border: 2px solid #5d036f;*/
+            box-shadow: 1px 1px 1px #000;
+            border-radius: 2px;
+        }
+
+            .details-button:hover {
+                /*background: url("../../Images/details-white-hover.png") no-repeat left ;*/
+                background-color: #2b2828;
+            }
+
+        .add-button {
+            background: url("../../Images/retail-white-hover.png") no-repeat left #c78d46;
+            padding-left: 18px;
+            color: #eeeeee;
+            font-size: 0.9em;
+            /*background-color: transparent;*/
+            height: 26.5px;
+            border: none;
+            /*border: 2px solid #5d036f;*/
+            box-shadow: 1px 1px 1px #000;
+            border-radius: 2px;
+        }
+
+            .add-button:hover {
+                /*background: url("../../Images/retail-white-hover.png") no-repeat left;
+                background-color: #5d036f;
+                color: white;*/
+                background-color: #2b2828;
+            }
+
+
+        /*copy*/
+        .clear-fix:after {
+            content: ".";
+            clear: both;
+            display: block;
+            height: 0;
+            visibility: hidden;
+        }
+
+
+
+
+
+
+        .searchbutton:active {
+            border: 1px solid gold;
+        }
+
+        .float-left {
+            float: left;
+        }
+
+        .float-right {
+            float: right;
+        }
+
+        .shop-title {
+            padding-top: 10px;
+            padding-left: 25px;
+        }
+
+            .shop-title a {
+                color: #eeeeee;
+                font-size: 1.3em;
+                font-weight: 300;
+                cursor: pointer;
+                letter-spacing: 0.25px;
+                padding-left: 30px;
+                text-shadow: 1px 1px 1px #000;
+                background: url("../../Images/shopping-bag.png") no-repeat left;
+            }
+
+        .jamim-bottom-logo {
+            background: url("../../Images/jamim-logo.jpg") no-repeat center;
+            position: fixed;
+            height: 60px;
+            width: 210px;
+            bottom: 0;
+            left: 0;
+        }
+
+        .search-box input[type="text"] {
+            border: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            width: 350px;
+            height: 24px;
+            margin-left: 30px;
+            margin-top: 10px;
+            font-size: 0.85em;
+            color: #2b2828;
+        }
+
+            .search-box input[type="text"]:hover, .search-box input[type="text"]:active, .search-box input[type="text"]:focus {
+                outline: 0;
+            }
+
+        .search-box {
+            width: 450px;
+        }
+
+            .search-box input[type="button"] {
+                background: url("../../Images/search.png") no-repeat #4d90fe center;
+                border: 0;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                text-align: center;
+                top: 0;
+                vertical-align: top;
+                outline: none;
+                z-index: -1;
+                -webkit-transition: margin-left 200ms ease-out 0;
+                transition: margin-left 200ms ease-out 0;
+                height: 26px;
+                width: 50px;
+                margin-top: 10px;
+                margin-left: 0.25px;
+            }
+
+                .search-box input[type="button"]:hover, .search-box input[type="button"]:active, .search-box input[type="button"]:focus {
+                    background-color: #2d7bfc;
+                    outline: 0;
+                }
+
+        .user-widget {
+            padding-top: 10px;
+            padding-right: 30px;
+            font-size: 0.85em;
+        }
+
+            .user-widget nav a {
+                color: #eeeeee;
+                padding-right: 10px;
+                cursor: pointer;
+                text-shadow: 1px 1px 1px #000;
+            }
+
+                .user-widget nav a:hover, .user-widget nav a:active, .user-widget nav a:visited {
+                    color: gold;
+                }
+
+                .user-widget nav a:first-child {
+                    padding-left: 18px;
+                    background: url("../../Images/my-cart.png") no-repeat left;
+                    border-right: 2px solid #1395b4;
+                }
+
+                .user-widget nav a:nth-child(2) {
+                    padding-left: 18px;
+                    border-right: 2px solid #1395b4;
+                    background: url("../../Images/offer.png") no-repeat left;
+                }
+
+                .user-widget nav a:nth-child(3) {
+                    padding-left: 18px;
+                    background: url("../../Images/settings.png") no-repeat left;
+                }
+
+        .option-tray {
+            position: fixed;
+            width: 100%;
+            max-height: 50%;
+            margin-top: 45px;
+            border-top: 4px solid gold;
+            z-index: 3;
+            background-color: #fcfbfb;
+            box-shadow: -2px 2px 5px rgba(0,0,0,0.3);
+            display: none;
+            overflow-y: auto;
+        }
+
+        .scroll-top-button {
+            background: url("../../Images/circle-up.png") no-repeat center;
+            position: fixed;
+            height: 40px;
+            width: 40px;
+            margin-right: 60px;
+            bottom: 0;
+            right: 0;
+            display: none;
+        }
+
+            .scroll-top-button:hover {
+                background: url("../../Images/circle-up-hover.png") no-repeat center;
+            }
+
+        .checkout-button {
+            background: url("../../Images/menu-nav-hover.png") no-repeat #cf5044 right;
+            padding-right: 16px;
+            color: #eeeeee;
+            font-size: 0.9em;
+            font-weight: 300;
+            position: fixed;
+            height: 30px;
+            width: 130px;
+            margin-right: 60px;
+            margin-bottom: 5px;
+            bottom: 0;
+            border-radius: 2px;
+            left: 45%;
+            /*display:none;*/
+            box-shadow: 1px 1px 2px #000;
+            text-align: center;
+            border: none;
+            outline: 0;
+            opacity: 0.6;
+            /*background-color: #cf5044;*/
+        }
+
+            .checkout-button:hover, .checkout-button:active {
+                opacity: 1;
+                outline: 0;
+            }
+    </style>
+
+
+</head>
+<body>
+
+    <header id="fixed-header">
+        <div class="shop-title float-left"><a>@@ ABC super market</a></div>
+        <div class="search-box float-left">
+            <input type="text" placeholder=" search all products.." /><input type="button" />
+        </div>
+        <div class="user-widget float-right">
+            <nav>
+                <a>my cart</a>
+                <a>offer</a>
+                <a>settings</a>
+            </nav>
+        </div>
+    </header>
+    <div class="option-tray" id="cart">
+        <div style="height: 300px;">
+            cart
+        </div>
+    </div>
+
+
+    <div class="option-tray" id="offer">
+        <div style="height: 300px;">
+            offer
+        </div>
+    </div>
+
+    <div class="option-tray" id="settings">
+        <div style="height: 300px;">
+            settings
+        </div>
+    </div>
+
+
+    <div class="jamim-bottom-logo"></div>
+
+    <input type="button" class="checkout-button" value="check out" />
+
+    <div class="scroll-top-button"></div>
+
+
+
+    <div class="content-wrapper">
+
+        <div class="menu-wrapper">
+            <ul class="nav-menu" role="menu">
+                <li>
+                    <a href="#">groceries</a>
+
+                    <div class="menu-tile color1">
+                        <div class="sub-menu-title clear-fix">
+                            <span>groceries...</span>
+                            <span style="float: right"></span>
+                        </div>
+                        <div class="submenu-wrapper">
+                            <ul>
+                                <li><a>dry fruits & nuts</a></li>
+                                <li><a>dals & pulses</a></li>
+                                <li><a>edible oils and ghee </a></li>
+                                <li><a>flours</a></li>
+                                <li><a>masala & spices</a></li>
+                                <li><a>rice and rice products</a></li>
+                                <li><a>salt, sugar & jaggery</a></li>
+                                <li><a>dry fruits & nuts</a></li>
+                                <li><a>dals & pulses</a></li>
+                                <li><a>edible oils and ghee </a></li>
+                                <li><a>flours</a></li>
+                                <li><a>masala & spices</a></li>
+                                <li><a>rice and rice products</a></li>
+                                <li><a>salt, sugar & jaggery</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="submenu-wrapper">
+                            <ul>
+                                <li><a>dry fruits & nuts</a></li>
+                                <li><a>dals & pulses</a></li>
+                                <li><a>edible oils and ghee</a> </li>
+                                <li><a>flours</a></li>
+                                <li><a>masala & spices</a></li>
+                                <li><a>rice and rice products</a></li>
+                                <li><a>salt, sugar & jaggery</a></li>
+                                <li><a>dry fruits & nuts</a></li>
+                                <li><a>dals & pulses</a></li>
+                                <li><a>edible oils and ghee </a></li>
+                                <li><a>flours</a></li>
+                                <li><a>masala & spices</a></li>
+                                <li><a>rice and rice products</a></li>
+                                <li><a>salt, sugar & jaggery</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="submenu-wrapper">
+                            <ul>
+                                <li><a>dry fruits & nuts</a></li>
+                                <li><a>dals & pulses</a></li>
+                                <li><a>edible oils and ghee</a> </li>
+                                <li><a>flours</a></li>
+                                <li><a>masala & spices</a></li>
+                                <li><a>rice and rice products</a></li>
+                                <li><a>salt, sugar & jaggery</a></li>
+                                <li><a>dry fruits & nuts</a></li>
+                                <li><a>dals & pulses</a></li>
+                                <li><a>edible oils and ghee </a></li>
+                                <li><a>flours</a></li>
+                                <li><a>masala & spices</a></li>
+                                <li><a>rice and rice products</a></li>
+                                <li><a>salt, sugar & jaggery</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="submenu-wrapper">
+                            <div class="img-submenu-grocery">
+                            </div>
+                            <div class="img-small-submenu-grocery">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">dairy</a>
+
+                    <div class="menu-tile color2">
+                        <div class="sub-menu-title clear-fix">
+                            <span>dairy...</span>
+                            <span style="float: right"></span>
+
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">pantry</a>
+
+                    <div class="menu-tile color3">
+                        <div class="sub-menu-title">
+                            <span>pantry...</span>
+                            <span style="float: right"></span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">home care</a>
+
+                    <div class="menu-tile color4">
+                        <div class="sub-menu-title">
+                            <span>home care...</span>
+                            <span style="float: right"></span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">personal care</a>
+
+                    <div class="menu-tile color5">
+                        <div class="sub-menu-title">
+                            <span>personal care...</span>
+                            <span style="float: right"></span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">beverages</a>
+
+                    <div class="menu-tile color6">
+                        <div class="sub-menu-title">
+                            <span>beverages...</span>
+                            <span style="float: right"></span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">breakfast</a>
+
+                    <div class="menu-tile color7">
+                        <div class="sub-menu-title">
+                            <span>breakfast...</span>
+                            <span style="float: right"></span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">organic</a>
+
+                    <div class="menu-tile color8">
+                        <div class="sub-menu-title">
+                            <span>organic...</span>
+                            <span style="float: right"></span>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="product-wrapper">
+            <div class="item-wrapper">
+                <div class="item-row">
+                    <div class="item">
+                        <div class="item-img"></div>
+                        <div class="item-desc">
+                            <div class="price clear-fix">186</div>
+                            <div class="item-detail">horlicks plane, jar 0.5 kg</div>
+                        </div>
+                        <div class="item-widget">
+                            &nbsp;<input class="qty-spinner" placeholder="qty" />
+                            <input type="button" class="details-button" value="details" />
+                            <input type="button" class="add-button" value="add" />
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-img"></div>
+                        <div class="item-desc">
+                            <div class="price clear-fix">186</div>
+                            <div class="item-detail">horlicks plane, jar 0.5 kg</div>
+                        </div>
+                        <div class="item-widget">
+                            &nbsp;<input class="qty-spinner" placeholder="qty" />
+                            <input type="button" class="details-button" value="details" />
+                            <input type="button" class="add-button" value="add" />
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-img"></div>
+                        <div class="item-desc">
+                            <div class="price clear-fix">186</div>
+                            <div class="item-detail">horlicks plane, jar 0.5 kg</div>
+                        </div>
+                        <div class="item-widget">
+                            &nbsp;<input class="qty-spinner" placeholder="qty" />
+                            <input type="button" class="details-button" value="details" />
+                            <input type="button" class="add-button" value="add" />
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-img"></div>
+                        <div class="item-desc">
+                            <div class="price clear-fix">186</div>
+                            <div class="item-detail">horlicks plane, jar 0.5 kg</div>
+                        </div>
+                        <div class="item-widget">
+                            &nbsp;<input class="qty-spinner" placeholder="qty" />
+                            <input type="button" class="details-button" value="details" />
+                            <input type="button" class="add-button" value="add" />
+                        </div>
+                    </div>
+                </div>
+                <div class="item-row">
+                    <div class="item">
+                        <div class="item-img"></div>
+                        <div class="item-desc">
+                            <div class="price clear-fix">186</div>
+                            <div class="item-detail">horlicks plane, jar 0.5 kg</div>
+                        </div>
+                        <div class="item-widget">
+                            &nbsp;<input class="qty-spinner" placeholder="qty" />
+                            <input type="button" class="details-button" value="details" />
+                            <input type="button" class="add-button" value="add" />
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-img"></div>
+                        <div class="item-desc">
+                            <div class="price clear-fix">186</div>
+                            <div class="item-detail">horlicks plane, jar 0.5 kg</div>
+                        </div>
+                        <div class="item-widget">
+                            &nbsp;<input class="qty-spinner" placeholder="qty" />
+                            <input type="button" class="details-button" value="details" />
+                            <input type="button" class="add-button" value="add" />
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-img"></div>
+                        <div class="item-desc">
+                            <div class="price clear-fix">186</div>
+                            <div class="item-detail">horlicks plane, jar 0.5 kg</div>
+                        </div>
+                        <div class="item-widget">
+                            &nbsp;<input class="qty-spinner" placeholder="qty" />
+                            <input type="button" class="details-button" value="details" />
+                            <input type="button" class="add-button" value="add" />
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-img"></div>
+                        <div class="item-desc">
+                            <div class="price clear-fix">186</div>
+                            <div class="item-detail">horlicks plane, jar 0.5 kg</div>
+                        </div>
+                        <div class="item-widget">
+                            &nbsp;<input class="qty-spinner" placeholder="qty" />
+                            <input type="button" class="details-button" value="details" />
+                            <input type="button" class="add-button" value="add" />
+                        </div>
+                    </div>
+                </div>
+                <div class="item-row">
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                </div>
+                <div class="item-row">
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                </div>
+                <div class="item-row">
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                </div>
+                <div class="item-row">
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        $(function () {
+            $('.qty-spinner').spinner({
+                min: 0,
+                max: 200,
+                step: 1
+            });
+
+            $('.ui-spinner').removeClass('ui-corner-all ui-widget').addClass('custom-ui-spinner');
+        });
+
+
+        $('.user-widget nav a:eq(0)').on("click", function (e) {
+            e.stopPropagation();
+            if ($('#offer').is(':hidden') && $('#settings').is(':hidden')) {
+                $('#cart').animate({ opacity: 'toggle', height: 'toggle' });
+            }
+            else {
+                if ($('#settings').is(':visible')) {
+
+                    $('#settings').fadeOut("fast", function () {
+                        $('#cart').animate({ opacity: 'toggle', height: 'toggle' });
+                    });
+                }
+
+                if ($('#offer').is(':visible')) {
+                    $('#offer').fadeOut("fast", function () {
+                        $('#cart').animate({ opacity: 'toggle', height: 'toggle' });
+                    });
+                }
+            }
+
+        });
+
+        $('.user-widget nav a:eq(1)').on("click", function (e) {
+            e.stopPropagation();
+            if ($('#cart').is(':hidden') && $('#settings').is(':hidden')) {
+                $('#offer').animate({ opacity: 'toggle', height: 'toggle' });
+            }
+            else {
+                if ($('#settings').is(':visible')) {
+                    $('#settings').fadeOut("fast", function () {
+                        $('#offer').animate({ opacity: 'toggle', height: 'toggle' });
+                    });
+                }
+
+                if ($('#cart').is(':visible')) {
+                    $('#cart').fadeOut("fast", function () {
+                        $('#offer').animate({ opacity: 'toggle', height: 'toggle' });
+                    });
+                }
+            }
+        });
+
+        $('.user-widget nav a:eq(2)').on("click", function (e) {
+            e.stopPropagation();
+            if ($('#cart').is(':hidden') && $('#offer').is(':hidden')) {
+                $('#settings').animate({ opacity: 'toggle', height: 'toggle' });
+            }
+            else {
+                if ($('#offer').is(':visible')) {
+                    $('#offer').fadeOut("fast", function () {
+                        $('#settings').animate({ opacity: 'toggle', height: 'toggle' });
+                    });
+                }
+
+                if ($('#cart').is(':visible')) {
+                    $('#cart').fadeOut("fast", function () {
+                        $('#settings').animate({ opacity: 'toggle', height: 'toggle' });
+                    });
+                }
+            }
+        });
+
+
+
+        $('.option-tray').siblings().click(function (e) {
+            e.stopPropagation();
+        });
+
+        $('html,body').click(function (e) {
+            $('.option-tray').hide();
+        });
+
+
+
+
+        $('.nav-menu li').hover(function () {
+            jQuery(this).find("div").show();
+        }, function () {
+            jQuery(this).find("div").hide();
+        }
+        );
+
+
+        $('.scroll-top-button').on("click", function () {
+            $('html, body').animate({ scrollTop: 0 }, 400);
+            return false;
+        });
+
+
+
+        $(window).scroll(function () {
+
+
+            if ($(this).scrollTop() == 0) {
+                $('#fixed-header').css({
+                    'box-shadow': 'none',
+                    '-moz-box-shadow': 'none',
+                    '-webkit-box-shadow': 'none'
+                });
+                $('.scroll-top-button').hide();
+
+            }
+            else {
+                $('#fixed-header').css({
+                    'box-shadow': '0px 2px 2px #000',
+                    '-moz-box-shadow': '0px 2px 2px #000',
+                    '-webkit-box-shadow': '0px 2px 2px #000'
+                });
+                $('.scroll-top-button').show();
+            }
+        });
+    </script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+@*@if (Model != null)
+    { <table class="table table-bordered table-condensed table-hover grid-table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (CategoryView c in Model.Categories)
+                {
+                    <tr><td>@c.ProductCategoryId</td><td>@c.ProductCategoryName</td><td>@c.ProductTypeName</td></tr>
+                }
+            </tbody>
+        </table>
+
+    }*@
+
+
+

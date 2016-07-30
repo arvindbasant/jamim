@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B1FEC499-8446-482A-9707-D51BDEB5E1F1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Com.Jamim.Model</RootNamespace>
+    <AssemblyName>Com.Jamim.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IProductRepository.cs" />
+    <Compile Include="Abstract\IUnitOfwork.cs" />
+    <Compile Include="Abstract\IUnitOfWorkRepository.cs" />
+    <Compile Include="BaseEntities\Person.cs" />
+    <Compile Include="Carts\Cart.cs" />
+    <Compile Include="Carts\Item.cs" />
+    <Compile Include="Catalog\Catalog.cs" />
+    <Compile Include="Catalog\ICatalogRepository.cs" />
+    <Compile Include="Customers\Customer.cs" />
+    <Compile Include="Entities\Enum.cs" />
+    <Compile Include="Entities\Model.cs" />
+    <Compile Include="Images\Image.cs" />
+    <Compile Include="Images\ImagePath.cs" />
+    <Compile Include="Images\ImageType.cs" />
+    <Compile Include="Locations\IRegionRepository.cs" />
+    <Compile Include="Locations\IServiceAreaRepository.cs" />
+    <Compile Include="Locations\Region.cs" />
+    <Compile Include="Locations\ServiceArea.cs" />
+    <Compile Include="Manufacturers\Manufacturer.cs" />
+    <Compile Include="Orders\IOrderState.cs" />
+    <Compile Include="Orders\Order.cs" />
+    <Compile Include="Orders\OrderDetail.cs" />
+    <Compile Include="Orders\OrderStatus.cs" />
+    <Compile Include="Products\ApprovalStatus.cs" />
+    <Compile Include="Products\CategoryAccess.cs" />
+    <Compile Include="Products\ICategoryAccessRepository.cs" />
+    <Compile Include="Products\ICategoryRepository.cs" />
+    <Compile Include="Products\IProductAttribute.cs" />
+    <Compile Include="Products\IProductRepository.cs" />
+    <Compile Include="Products\Product.cs" />
+    <Compile Include="Products\Category.cs" />
+    <Compile Include="Products\Group.cs" />
+    <Compile Include="Products\Unit.cs" />
+    <Compile Include="Products\Weight.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Retailers\DeliveryPerson.cs" />
+    <Compile Include="Retailers\IRetailerRepository.cs" />
+    <Compile Include="Retailers\Rating.cs" />
+    <Compile Include="Retailers\Retailer.cs" />
+    <Compile Include="Retailers\RetailerCategory.cs" />
+    <Compile Include="Retailers\Review.cs" />
+    <Compile Include="Stores\IStoreRepository.cs" />
+    <Compile Include="Stores\Status.cs" />
+    <Compile Include="Stores\Store.cs" />
+    <Compile Include="Stores\StoreType.cs" />
+    <Compile Include="Taxes\Tax.cs" />
+    <Compile Include="Taxes\TaxRate.cs" />
+    <Compile Include="ValueObjects\Address.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Architecture\Grocery.cd" />
+    <None Include="Architecture\OrderProcess.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Com.Jamim.Infrastructure\Com.Jamim.Infrastructure.csproj">
+      <Project>{527dfc45-2ce0-4000-8ec1-616df9256036}</Project>
+      <Name>Com.Jamim.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

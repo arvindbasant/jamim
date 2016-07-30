@@ -1,0 +1,53 @@
+﻿@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/open-sans/OpenSans-Regular.ttf') format('truetype');
+}
+
+
+body {
+    /*padding-top: 50px;
+    padding-bottom: 20px;*/
+    font-family: 'Open Sans', sans-serif;
+    color: #000;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 55px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input[type=text],
+select {
+    max-width: 345px;
+    /*height:28px !important;*/
+    border-radius: 2px !important;
+}
+
+select {
+    /*padding:0 !important;*/
+}
+
+label {
+    /*font-size:12px !important;
+    color:#005164;
+    font-family:'Segoe UI';
+    font-weight:600;*/
+}
+
+.control-label {
+    text-align: left !important;
+}
+
+textarea {
+    resize: none;
+}

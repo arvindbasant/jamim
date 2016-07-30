@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8F117F23-C07A-4C09-8462-55258C3B011B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Com.Jamim.Services</RootNamespace>
+    <AssemblyName>Com.Jamim.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\External\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\External\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Customer\Abstract\ICartService.cs" />
+    <Compile Include="Customer\Abstract\ICustomerService.cs" />
+    <Compile Include="Customer\Abstract\IOrderService.cs" />
+    <Compile Include="Customer\Abstract\IProductCatalogueService.cs" />
+    <Compile Include="Customer\Abstract\ILocationService.cs" />
+    <Compile Include="Customer\Abstract\IRetailerService.cs" />
+    <Compile Include="Customer\Abstract\IStoreService.cs" />
+    <Compile Include="Customer\AutoMapperConfig.cs" />
+    <Compile Include="Customer\Concrete\LocationService.cs" />
+    <Compile Include="Customer\Concrete\ProductCatalogueService.cs" />
+    <Compile Include="Customer\Concrete\ProductSearchRequestQueryGenerator.cs" />
+    <Compile Include="Customer\Concrete\RetailerService.cs" />
+    <Compile Include="Customer\Concrete\StoreService.cs" />
+    <Compile Include="Customer\Mapping\CategoryMapper.cs" />
+    <Compile Include="Customer\Mapping\IProductAttributeMapper.cs" />
+    <Compile Include="Customer\Mapping\ProductCatalogMapper.cs" />
+    <Compile Include="Customer\Mapping\ProductMapper.cs" />
+    <Compile Include="Customer\Mapping\RegionMapper.cs" />
+    <Compile Include="Customer\Mapping\RetailerMapper.cs" />
+    <Compile Include="Customer\Mapping\ServiceAreaMapper.cs" />
+    <Compile Include="Customer\Mapping\StoreMapper.cs" />
+    <Compile Include="Customer\Messaging\CustomerService\GetCustomerRequest.cs" />
+    <Compile Include="Customer\Messaging\CustomerService\GetCustomerResponse.cs" />
+    <Compile Include="Customer\Messaging\CustomerService\ModifyCustomerRequest.cs" />
+    <Compile Include="Customer\Messaging\CustomerService\ModifyCustomerResponse.cs" />
+    <Compile Include="Customer\Messaging\CustomerService\ShippingAddressAddRequest.cs" />
+    <Compile Include="Customer\Messaging\CustomerService\ShippingAddressAddResponse.cs" />
+    <Compile Include="Customer\Messaging\CustomerService\ShippingAddressModifyRequest.cs" />
+    <Compile Include="Customer\Messaging\CustomerService\ShippingAddressModifyResponse.cs" />
+    <Compile Include="Customer\Messaging\LocationService\GetAllServiceAreaResponse.cs" />
+    <Compile Include="Customer\Messaging\OrderService\CreateOrderRequest.cs" />
+    <Compile Include="Customer\Messaging\OrderService\CreateOrderResponse.cs" />
+    <Compile Include="Customer\Messaging\OrderService\GetOrderRequest.cs" />
+    <Compile Include="Customer\Messaging\OrderService\GetOrderResponse.cs" />
+    <Compile Include="Customer\Messaging\OrderService\SetOrderPaymentRequest.cs" />
+    <Compile Include="Customer\Messaging\OrderService\SetOrderPaymentResponse.cs" />
+    <Compile Include="Customer\Messaging\ProductCatalogService\CreateCartRequest.cs" />
+    <Compile Include="Customer\Messaging\ProductCatalogService\CreateCartResponse.cs" />
+    <Compile Include="Customer\Messaging\ProductCatalogService\GetCategoryRequest.cs" />
+    <Compile Include="Customer\Messaging\ProductCatalogService\GetCategoryResponse.cs" />
+    <Compile Include="Customer\Messaging\ProductCatalogService\GetCartRequest.cs" />
+    <Compile Include="Customer\Messaging\ProductCatalogService\GetCartResponse.cs" />
+    <Compile Include="Customer\Messaging\ProductCatalogService\GetFeaturedProductRequest.cs" />
+    <Compile Include="Customer\Messaging\ProductCatalogService\GetFeaturedProductResponse.cs" />
+    <Compile Include="Customer\Messaging\ProductCatalogService\GetProductRequest.cs" />
+    <Compile Include="Customer\Messaging\ProductCatalogService\GetProductResponse.cs" />
+    <Compile Include="Customer\Messaging\ProductCatalogService\GetProductByCategoryRequest.cs" />
+    <Compile Include="Customer\Messaging\ProductCatalogService\GetProductByCategoryResponse.cs" />
+    <Compile Include="Customer\Messaging\ProductCatalogService\ModifyCartRequest.cs" />
+    <Compile Include="Customer\Messaging\ProductCatalogService\ModifyCartResponse.cs" />
+    <Compile Include="Customer\Messaging\ProductCatalogService\ProductQuantityUpdateRequest.cs" />
+    <Compile Include="Customer\Messaging\ProductCatalogService\ProductQuantityUpdateResponse.cs" />
+    <Compile Include="Customer\Messaging\ProductCatalogService\ProductsSortBy.cs" />
+    <Compile Include="Customer\Messaging\LocationService\GetAllRegionRequest.cs" />
+    <Compile Include="Customer\Messaging\LocationService\GetAllRegionResponse.cs" />
+    <Compile Include="Customer\Messaging\LocationService\GetRegionRequest.cs" />
+    <Compile Include="Customer\Messaging\LocationService\GetRegionResponse.cs" />
+    <Compile Include="Customer\Messaging\RetailerService\GetAllRetailerRequest.cs" />
+    <Compile Include="Customer\Messaging\RetailerService\GetAllRetailerResponse.cs" />
+    <Compile Include="Customer\Messaging\RetailerService\GetRetailerRequest.cs" />
+    <Compile Include="Customer\Messaging\RetailerService\GetRetailerResponse.cs" />
+    <Compile Include="Customer\Messaging\StoreService\GetAllStoresInRegionResponse.cs" />
+    <Compile Include="Customer\Messaging\StoreService\GetAllStroresInRegionRequest.cs" />
+    <Compile Include="Customer\Messaging\SuccessErrorMessage.cs" />
+    <Compile Include="Customer\ViewModels\CartItemView.cs" />
+    <Compile Include="Customer\ViewModels\CartView.cs" />
+    <Compile Include="Customer\ViewModels\CategoryView.cs" />
+    <Compile Include="Customer\ViewModels\CustomerView.cs" />
+    <Compile Include="Customer\ViewModels\OrderItemView.cs" />
+    <Compile Include="Customer\ViewModels\OrderSummaryView.cs" />
+    <Compile Include="Customer\ViewModels\OrderView.cs" />
+    <Compile Include="Customer\ViewModels\ProductView.cs" />
+    <Compile Include="Customer\ViewModels\ProductDetailView.cs" />
+    <Compile Include="Customer\ViewModels\Refinement.cs" />
+    <Compile Include="Customer\ViewModels\RefinementGroup.cs" />
+    <Compile Include="Customer\ViewModels\RefinementGroupings.cs" />
+    <Compile Include="Customer\ViewModels\RegionView.cs" />
+    <Compile Include="Customer\ViewModels\RetailerView.cs" />
+    <Compile Include="Customer\ViewModels\ServiceAreaView.cs" />
+    <Compile Include="Customer\ViewModels\ShippingAddressView.cs" />
+    <Compile Include="Customer\ViewModels\ShippingOptionView.cs" />
+    <Compile Include="Customer\ViewModels\StoreView.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Retailer\" />
+    <Folder Include="Support\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Com.Jamim.Infrastructure\Com.Jamim.Infrastructure.csproj">
+      <Project>{527dfc45-2ce0-4000-8ec1-616df9256036}</Project>
+      <Name>Com.Jamim.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Com.Jamim.Model\Com.Jamim.Model.csproj">
+      <Project>{b1fec499-8446-482a-9707-d51bdeb5e1f1}</Project>
+      <Name>Com.Jamim.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Com.Jamim.Services.Cache\Com.Jamim.Services.Cache.csproj">
+      <Project>{24c4f65a-56bf-4926-b869-9b4246f6330a}</Project>
+      <Name>Com.Jamim.Services.Cache</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

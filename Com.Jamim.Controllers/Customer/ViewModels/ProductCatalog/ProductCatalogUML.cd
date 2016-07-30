@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Com.Jamim.Controllers.Customer.ViewModels.BasePageView">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Customer\ViewModels\BasePageView.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CartSummery" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Com.Jamim.Controllers.Customer.ViewModels.ProductCatalog.CartDetailView">
+    <Position X="4.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Customer\ViewModels\ProductCatalog\CartDetailView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Jamim.Controllers.Customer.ViewModels.ProductCatalog.BaseProductCatalogPageView">
+    <Position X="3" Y="2" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAACAAA=</HashCode>
+      <FileName>Customer\ViewModels\ProductCatalog\BaseProductCatalogPageView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Jamim.Controllers.Customer.ViewModels.ProductCatalog.HomePageView">
+    <Position X="0.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Customer\ViewModels\ProductCatalog\HomePageView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Jamim.Controllers.Customer.ViewModels.ProductCatalog.ProductDetailView">
+    <Position X="5" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Customer\ViewModels\ProductCatalog\ProductDetailView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Jamim.Controllers.Customer.ViewModels.ProductCatalog.ProductSearchResultView">
+    <Position X="1.25" Y="6" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Customer\ViewModels\ProductCatalog\ProductSearchResultView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Jamim.Controllers.Customer.ViewModels.CartSummaryView">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Customer\ViewModels\CartSummaryView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

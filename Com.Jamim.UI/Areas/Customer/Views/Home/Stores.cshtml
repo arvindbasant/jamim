@@ -1,0 +1,205 @@
+﻿@{
+    ViewBag.Title = "Stores";
+    Layout = "~/Areas/Customer/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .shop-title {
+        font-family: 'Segoe UI';
+        font-weight: 400;
+        font-size: 1.15em;
+        letter-spacing: -0.5px;
+        color: #001a19;
+        /*text-shadow: 1px 1px 1px #52fff7;*/
+        line-height: 1.1em;
+    }
+
+    .distance {
+        background: url("../Images/map.png") no-repeat;
+        color: #e9e8e8;
+        padding-left: 16px;
+        font-size: .8em;
+        font-weight: bold;
+        float: left;
+        margin-left: 20px;
+        letter-spacing: 1px;
+        cursor: pointer;
+    }
+
+        .distance:hover {
+            color: #012a41;
+        }
+
+    .rating {
+        color: #ffd800;
+        float: right;
+        padding-right: 10px;
+        text-shadow: 1px 1px 1px #000;
+    }
+
+    .reviews {
+        background: url("../Images/edit.png") no-repeat;
+        padding-left: 16px;
+        font-weight: bold;
+        color: #e9e8e8;
+        font-size: .8em;
+        margin-left: 30px;
+        letter-spacing: 1px;
+        cursor: pointer;
+    }
+
+        .reviews:hover {
+            color: #012a41;
+        }
+
+
+
+
+    .shop-now {
+        background: url("../Images/shopping-bag.png") no-repeat rgba(0,0,0,0.4);
+        background-position: center;
+    }
+
+        .shop-now:hover {
+            background: url("../Images/arrow-right.png") no-repeat rgba(0,0,0,0.3);
+            background-position: center;
+        }
+
+    .caption {
+        background-color: #3ec9c3;
+    }
+
+    .thumbnail {
+        border: none !important;
+    }
+
+    a.badge:hover,
+    a.badge:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+
+<div id="spinner"></div>
+<div id="logindialog" title="lightbox" style="display: none" class="foo">
+
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="thumbnail">
+                <a href="#">
+                    <img src="~/Images/tile1.jpg" alt="...">
+                </a>
+                <div class="caption">
+                    <h4 class="shop-title">Shine Super Market<span class="rating">&nbsp; &#9733;&nbsp;&#9733;&nbsp;&#9733;</span></h4>
+                    <p>The complete grocery store, delivers all type of griceries to your doorsteps within 90 minutes. Happy Shoping...</p>
+                    <p>
+                        <a href="#" class="badge alert-info">25 Reviews</a>
+                        <a href="#" class="badge alert-info">1.2 km</a>
+                        <a href="#" class="badge alert-info">Shop Now&nbsp;<span class="glyphicon glyphicon-shopping-cart"></span></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="thumbnail">
+                <a href="#">
+                    <img src="~/Images/tile2.jpg" alt="...">
+                </a>
+                <div class="caption">
+                    <h4 class="shop-title">Shine Super Market<span class="rating">&nbsp; &#9733;&nbsp;&#9733;&nbsp;&#9733;</span></h4>
+                    <p>The complete grocery store, delivers all type of griceries to your doorsteps within 90 minutes. Happy Shoping...</p>
+                    <p>
+                        <a href="#" class="badge alert-info">25 Reviews</a>
+                        <a href="#" class="badge alert-info">1.2 km</a>
+                        <a href="#" class="badge alert-info">Shop Now&nbsp;<span class="glyphicon glyphicon-shopping-cart"></span></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="thumbnail">
+                <a href="#">
+                    <img src="~/Images/tile3.jpg" alt="...">
+                </a>
+                <div class="caption">
+                    <h4 class="shop-title">Shine Super Market<span class="rating">&nbsp; &#9733;&nbsp;&#9733;&nbsp;&#9733;</span></h4>
+                    <p>The complete grocery store, delivers all type of griceries to your doorsteps within 90 minutes. Happy Shoping...</p>
+                    <p>
+                        <a href="#" class="badge alert-info">25 Reviews</a>
+                        <a href="#" class="badge alert-info">1.2 km</a>
+                        <a href="#" class="badge alert-info">Shop Now&nbsp;<span class="glyphicon glyphicon-shopping-cart"></span></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="thumbnail">
+                <a href="#">
+                    <img src="~/Images/tile4.jpg" alt="...">
+                </a>
+                <div class="caption">
+                    <h4 class="shop-title">Shine Super Market<span class="rating">&nbsp; &#9733;&nbsp;&#9733;&nbsp;&#9733;</span></h4>
+                    <p>The complete grocery store, delivers all type of griceries to your doorsteps within 90 minutes. Happy Shoping...</p>
+                    <p>
+                        <a href="#" class="badge alert-info">25 Reviews</a>
+                        <a href="#" class="badge alert-info">1.2 km</a>
+                        <a href="#" class="badge alert-info">Shop Now&nbsp;<span class="glyphicon glyphicon-shopping-cart"></span></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section scripts{
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery-ui.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <link href="~/Content/jquery-ui.css" rel="stylesheet" />
+
+
+    <script>
+        $("[id*=loginLink]").on("click", function () {
+            $("#logindialog").dialog({
+                modal: true,
+                draggable: false,
+                resizable: false,
+                // position: ['center', 'top'],
+                show: 'fadeIn',
+                hide: 'fadeOut',
+                width: 650,
+                height: 400,
+                //dialogClass: 'ui-dialog-osx',
+                //buttons: {
+                //    "I've read and understand this": function () {
+                //        $(this).dialog("close");
+                //    }
+                //}
+            });
+            // return false;
+        });
+
+
+        $('div#logindialog').bind('dialogclose', function (event) {
+            $('#logindialog').html('');
+        });
+
+
+    </script>
+
+    <style>
+        .ui-dialog, .ui-widget, .ui-widget-content, .ui-corner-all, .foo, .ui-draggable, .ui-resizable {
+            background: #fff !important;
+        }
+
+        .ui-widget-header {
+            border: none;
+        }
+    </style>
+
+}

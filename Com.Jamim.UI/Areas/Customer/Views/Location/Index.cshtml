@@ -1,0 +1,308 @@
+﻿@model Com.Jamim.Controllers.Customer.ViewModels.Location.LocationPageView
+@using Com.Jamim.Services.Customer.ViewModels
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    @*<link href="~/Content/jquery-ui.min.css" rel="stylesheet" />*@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <title>Test</title>
+
+    <link href="~/Content/styles.css" rel="stylesheet" />
+    <style>
+        /*$('.ui-autocomplete').addClass('dropdown-menu');*/
+        .ui-autocomplete {
+            position: absolute;
+            /*top: 100%;*/
+            left: 0;
+            z-index: 1000;
+            display: none;
+            float: left;
+            min-width: 160px;
+            padding: 5px 0;
+            margin: 2px 0 0;
+            font-size: 14px;
+            text-align: left;
+            list-style: none;
+            background-color: #fff;
+            -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+            border: 1px solid #ccc;
+            border: 1px solid rgba(0, 0, 0, .15);
+            border-radius: 4px;
+            -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+        }
+
+            .ui-autocomplete > li {
+                display: block;
+                padding: 3px 20px;
+                clear: both;
+                font-weight: normal;
+                line-height: 1.42857143;
+                color: #333;
+                white-space: nowrap;
+            }
+
+                .ui-autocomplete > li:hover,
+                .ui-autocomplete > li:focus {
+                    color: #262626;
+                    text-decoration: none;
+                    background-color: #f5f5f5;
+                }
+        .ui-state-focus {
+            color: #262626;
+            text-decoration: none;
+            background-color: #f5f5f5;
+            outline: 0;
+        }
+
+
+        .ui-helper-hidden-accessible {
+            display: none;
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <div class="modal" id="loginModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title">@Html.Partial("_LoginPartial")</h4>
+                </div>
+                <div class="modal-body" id="loginModalBody" style="height:350px;">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    @using (Html.BeginForm("Index", "Location", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div class="container-fluid">
+
+            <div class="row top-bar">
+                <div class=" col-md-8 col-md-offset-1">
+                    <div class="pull-left brand"><img src="~/Images/logo.png" alt="Jamim" />&nbsp;jamim</div>
+                </div>
+                <div class="col-md-1">
+                    <button type="button" class="btn btn-sm btn-primary btn-transparent pull-left">RETAILER</button>
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-sm btn-primary btn-transparent pull-left" id="btnLogin">LOGIN / SIGN UP</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="jamim-banner text-center">Order food items from your nearby stores</div><br />
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 ">
+                        <div class="input-group">
+                            <div class="input-group-btn search-panel">
+                                <button type="button" class="btn btn-lg btn-primary dropdown-toggle" data-toggle="dropdown">
+                                    <span class="fa fa-map-marker"></span>&nbsp;<span id="search_concept">Select City</span>&nbsp;<span class="fa fa-caret-down"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+
+                                    @foreach (var c in Model.ServiceAreas)
+                                    {
+                                        <li><a href="#@c.Id">@c.City</a></li>
+                                    }
+                                </ul>
+                            </div>
+                            <input type="hidden" name="search_param" value="all" id="search_param">
+                            <input type="text" class="form-control input-lg search-box" id="regionSearch" name="x" placeholder="type zipcode or area to search nearby stores . . ." autocomplete="off">
+                            <span class="input-group-btn">
+                                <button class="btn btn-lg btn-success" type="submit"><span class="fa fa-search"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="padding:5px;">
+                <div class="col-md-2 col-md-offset-2 tile tile-grocery text-center">
+                    <br />
+                    groceries
+                </div>
+                <div class="col-md-2 col-md-offset-1 tile tile-vegitable text-center">
+                    fruits <br /> &amp; <br /> vegitables
+                </div>
+                <div class="col-md-2 col-md-offset-1 tile tile-meat text-center">
+                    fresh meat <br /> &amp;<br /> fish
+                </div>
+            </div>
+
+            <div class="row navbar-fixed-bottom" style="margin-bottom:5px;">
+                <div class="col-md-2 col-md-offset-2">
+                    <div class="text-center bottom-widget">
+                        <span class="fa fa-3x fa-gift"></span><br />
+                        Best Offers
+                    </div>
+                </div>
+                <div class="col-md-2 col-md-offset-1">
+                    <div class="text-center bottom-widget">
+                        <span class="fa fa-3x fa-thumbs-up"></span><br />
+                        Assured Quality
+                    </div>
+                </div>
+                <div class="col-md-2 col-md-offset-1">
+                    <div class="text-center bottom-widget">
+                        <span class="fa fa-3x fa-truck"></span><br />
+                        Free Delivery
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    <input type="hidden" name="hdnRegionId" id="hdnRegionId" value="0" />
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/jquery-ui.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+        <script>
+            $(document).ready(function (e) {
+                $('.search-panel .dropdown-menu').find('a').click(function (e) {
+                    e.preventDefault();
+                    var param = $(this).attr("href").replace("#", "");
+                    var concept = $(this).text();
+                    $('.search-panel span#search_concept').text(concept);
+                    $('.input-group #search_param').val(param);
+                });
+            });
+        </script>
+
+        <script>
+            $(function () {
+                $('#regionSearch').on("keypress", function () {
+                    var filterValue = $('#regionSearch').val();
+                    var serviceAreaId = $('#search_param').val();
+                    var regions = [];
+                    var regionsWithId = [];
+                    if (filterValue.length == 2) {
+                        $.get("/Customer/Location/GetRegions/" + serviceAreaId, function (data) {
+                            $(data).each(function (e, v) {
+                                var temp = v.RegionDesc + '-' + v.ZipCode;
+                                var obj = { key: temp, value: v.Id };
+                                regions.push(temp);
+                                regionsWithId.push(obj)
+                            });
+                            $("#regionSearch").autocomplete({
+                                source: regions,
+                                select: function (event, ui) {
+                                    $(regionsWithId).each(function (e, v) {
+                                        debugger;
+                                        if (v.key == ui.item.value) {
+                                           
+                                            $('#hdnRegionId').val(v.value);
+                                            return;
+                                        }
+                                    });
+
+                                }
+                            });
+                        });
+                    }
+                });
+
+            });
+        </script>
+        
+        <script>
+            $(function () {
+                $('#btnLogin').on("click", function () {
+                    $('#loginModal').modal('show');
+                });
+            });
+        </script>
+
+    }
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@{
+        Layout = null;
+
+
+    }
+
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3" >
+            <section id="searchform">
+                @using (Html.BeginForm("Index")){
+                    @Html.AntiForgeryToken()
+                }
+            </section>
+        </div>
+    </div>
+
+
+
+
+
+    @Html.DropDownListFor(s => s.ServiceAreas, new SelectList(Model.ServiceAreas,"Id","City"))
+
+
+    
+
+
+    @foreach (ServiceAreaView s in Model.ServiceAreas)
+    {
+        <p>@s.Id</p>
+        <p>@s.CityShrtDesc</p>
+
+
+    }*@
+
+
+

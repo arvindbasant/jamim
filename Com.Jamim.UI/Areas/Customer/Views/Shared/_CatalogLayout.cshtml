@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Get Your Grocery!</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        .catalog-header {
+            background-color: #1c758a;
+        }
+
+        .scroll-top-button {
+            background: url("../../../Images/circle-up.png") no-repeat center;
+            position: fixed;
+            height: 40px;
+            width: 40px;
+            margin-right: 60px;
+            bottom: 0;
+            right: 0;
+            display: none;
+        }
+
+            .scroll-top-button:hover {
+                background: url("../../../Images/circle-up-hover.png") no-repeat center;
+            }
+    </style>
+
+
+</head>
+<body>
+    <div class="navbar catalog-header navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+
+            </div>
+        </div>
+    </div>
+    <div class="body-content">
+        <div class="row">
+            <div class="col-md-3">
+                @RenderSection("menu", required: true)
+            </div>
+            <div class="col-md-8">
+                @RenderSection("body", required: true)
+            </div>
+        </div>
+    </div>
+    <div class="scroll-top-button"></div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    <script>
+        $(function () {
+            $('.nav-menu li').hover(function () {
+                jQuery(this).find("div").show();
+            }, function () {
+                jQuery(this).find("div").hide();
+            });
+        });
+
+        $('.scroll-top-button').on("click", function () {
+            $('html, body').animate({ scrollTop: 0 }, 400);
+            return false;
+        });
+
+
+
+        $(window).scroll(function () {
+            if ($(this).scrollTop() == 0) {
+                $('.catalog-header').css({
+                    'box-shadow': 'none',
+                    '-moz-box-shadow': 'none',
+                    '-webkit-box-shadow': 'none'
+                });
+                $('.scroll-top-button').hide();
+            }
+            else {
+                $('.catalog-header').css({
+                    'box-shadow': '0px 1px 2px #0a2f38',
+                    '-moz-box-shadow': '0px 1px 2px #0a2f38',
+                    '-webkit-box-shadow': '0px 1px 2px #0a2f38'
+                });
+                $('.scroll-top-button').show();
+            }
+        });
+    </script>
+
+
+
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

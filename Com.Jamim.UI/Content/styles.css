@@ -1,0 +1,81 @@
+﻿
+@font-face {
+    font-family: 'Open Sans';
+    src:url('../fonts/open-sans/OpenSans-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Open Sans Light';
+    src:url('../fonts/open-sans/OpenSans-Light.ttf') format('truetype');
+}
+body {
+    background: linear-gradient(to bottom, rgba(000,000,000,0) 0%,rgba(000,000,000,.9) 100%), url(../../Images/bg.jpg) no-repeat 0 0;
+    /*background-image: url(../../Images/bg.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;*/
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-x: hidden;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+}
+
+.btn-transparent {
+    background-color: transparent !important;
+}
+.btn-transparent:hover, .btn-transparent:active{
+    background-color: #428bca !important;
+}
+
+.top-bar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.brand {
+    /*color: #428bca;*/
+    /*font-weight:bold;*/
+    font-size: 2em;
+    letter-spacing: 0.5px;
+}
+
+.jamim-banner {
+    margin-top: 100px;
+    font-size: 2.5em;
+}
+
+.tile {
+    margin-top: 100px;
+    height: 110px;
+    /*width:100%;*/
+    border-radius: 5px;
+    background-color: #000;
+    opacity: 0.7;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    font-size:1.8em;
+    /*color:#0089ff;*/
+}
+
+.tile-grocery {
+    /*background:url(../Images/grocery.jpg)  no-repeat center;*/
+}
+
+.tile-vegitable {
+    /*background: linear-gradient(to bottom, rgba(000,000,000,0.5) 0%,rgba(000,000,000,0.5) 100%), url(../Images/fruits-vegitables.jpg) no-repeat 0 0;*/
+}
+
+.tile-meat {
+    /*background: linear-gradient(to bottom, rgba(000,000,000,0.5) 0%,rgba(000,000,000,0.5) 100%), url(../Images/meat-fish.jpg) no-repeat 0 0;*/
+}
+
+.search-box{
+    outline:none !important;
+    border:none !important;
+  
+    /*border-left:5px solid #fff;*/
+}
+
+.bottom-widget{
+    /*font-size:1em;*/
+}

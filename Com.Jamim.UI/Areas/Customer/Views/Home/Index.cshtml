@@ -1,0 +1,67 @@
+﻿@model Com.Jamim.Controllers.Customer.ViewModels.ProductCatalog.HomePageView
+@using Com.Jamim.Services.Customer.ViewModels
+@using Com.Jamim.Controllers.Customer.ViewModels
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Customer/Views/Shared/_CatalogLayout.cshtml";
+}
+<style>
+    .ptitle {
+        font-size: 2em !important;
+    }
+</style>
+
+@section menu{
+    @Html.Partial("_CategoryPartial", Model.Categories)
+}
+
+@helper RenderProuct(IEnumerable<ProductView> products)
+{
+    foreach (ProductView c in products)
+    {
+
+        @*<p>CategoryId:@c.CategoryId</p><br />
+        <p>ImageSrc:@c.ImageSrc</p><br />
+        <p>ListPrice:@c.ListPrice</p><br />
+        <p> Manufacturer:@c.Manufacturer</p><br />
+        <p> Name:@c.Name</p><br />
+        <p> ProductId:@c.ProductId</p><br />
+        <p> Rank:@c.Rank</p><br />
+        <p> SellingPrice:@c.SellingPrice</p><br />
+        <p> ShortDescription:@c.ShortDescription</p><br />
+        <p> Weight:@c.Weight</p><br />
+        <hr />*@
+
+        <div class="col-xs-3" style=" padding-bottom:10px;">
+                <div style="height:270px; " class="thumbnail">
+                    <img src="../../../Images/horlicks.jpg" />
+                    <div class="caption">
+                        <h4 class="ptitle"><i class="fa fa-rupee">&nbsp;@c.SellingPrice&nbsp;|</i> @c.Name</h4>
+                        <p>this is sample text about product.</p>
+                        <p>
+
+                                <button type="button" class="btn btn-sm btn-default"><i class="fa fa-chevron-down"></i></button>
+                                <span class="cnt text-center" style="padding:5px;width:50px;">1</span>
+                                <button type="button" class="btn btn-sm btn-circle btn-default"><i class="fa fa-chevron-up"></i></button>
+
+                                <button class="btn btn-sm btn-primary pull-right"><i class="fa fa-shopping-cart"></i></button>
+
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        }
+        }
+
+        @section body{
+            <div class="row">
+                @RenderProuct(Model.Products)
+            </div>
+
+        }
+
+
+
+

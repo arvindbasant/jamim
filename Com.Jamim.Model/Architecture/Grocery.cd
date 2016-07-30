@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Com.Jamim.Model.BaseEntities.Person">
+    <Position X="13.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAEAAAAAAAIAAAAAAAAAAAAAAABAAAAAAAAAAAAg=</HashCode>
+      <FileName>BaseEntities\Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Jamim.Model.ValueObjects.Address">
+    <Position X="15" Y="10.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAgAAAEAEAAAIAAAIAAQAACICAAABAAAEggAAAAA=</HashCode>
+      <FileName>ValueObjects\Address.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ParentAddress" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="ChildAddress" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Com.Jamim.Model.Customers.Customer">
+    <Position X="14.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAEAAAAAAAAAAAAAAAAACAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Customers\Customer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Address" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Com.Jamim.Model.Retailers.Retailer">
+    <Position X="12" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAEEAEAAgAAAAAAAAAAAAAAAAAAAABECAAACAAAAAAA=</HashCode>
+      <FileName>Retailers\Retailer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RetailerCategory" />
+      <Property Name="Region" />
+      <Property Name="Address" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Reviews" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Com.Jamim.Model.Products.Product">
+    <Position X="6" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgBAAAAQAmgAgABMYgAAAQAACEgABECAAIAAAAACAE=</HashCode>
+      <FileName>Products\Product.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Weight" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.224" />
+  </Class>
+  <Class Name="Com.Jamim.Model.Catalog.Catalog">
+    <Position X="9" Y="8" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>EIgCAEAAAIiAAAAAAAAAAAQEAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Catalog\Catalog.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Retailer" />
+      <Property Name="Product" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Com.Jamim.Model.Retailers.Review">
+    <Position X="11" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAACBEAEBAAAAAAAAAAAAAAAAAAAAAEAAAAEQAEAAAA=</HashCode>
+      <FileName>Retailers\Review.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Rating" />
+      <Property Name="Retailer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Com.Jamim.Model.Orders.Order">
+    <Position X="16.75" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>GAEAAUAESABCAAAABAAAAAAAAAiAABCAAIAJYAAQAIQ=</HashCode>
+      <FileName>Orders\Order.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="OrderStatus" />
+      <Property Name="Retailer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Com.Jamim.Model.Orders.OrderDetail">
+    <Position X="19.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAECABAAAAAAAAAAAAAAAAAAAAAAAAABAgAAgAAAAAA=</HashCode>
+      <FileName>Orders\OrderDetail.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Order" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Com.Jamim.Model.Carts.Cart">
+    <Position X="23" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAEAAAAAACAAAAAAAAAAAAAACABAAAAAAQAAAAAQ=</HashCode>
+      <FileName>Carts\Cart.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Items" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Com.Jamim.Model.Carts.Item">
+    <Position X="20" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAEAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAgAAACAA=</HashCode>
+      <FileName>Carts\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Jamim.Model.Locations.Region">
+    <Position X="18" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ASAAAAAAAACAAAAIAAAAAAAAIAAAAAABAIAABAAAAAA=</HashCode>
+      <FileName>Locations\Region.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ServiceArea" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Com.Jamim.Model.Manufacturers.Manufacturer" Collapsed="true">
+    <Position X="25.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAgAAAAAAAAQAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Manufacturers\Manufacturer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Com.Jamim.Model.Locations.ServiceArea">
+    <Position X="21" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAACAAAAIEAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Locations\ServiceArea.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Com.Jamim.Model.Products.Category">
+    <Position X="5.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAEAACgAAAAAAAAAAQAAAAAABEAAAAAAAAAAAA=</HashCode>
+      <FileName>Products\Category.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Group" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Com.Jamim.Model.Products.Group">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Products\Group.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Jamim.Model.Taxes.Tax">
+    <Position X="13" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Taxes\Tax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Jamim.Model.Taxes.TaxRate">
+    <Position X="16" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAACAAAAACgAAAAAAAAAAAAAgAAAAAAAgAAAAAAAAE=</HashCode>
+      <FileName>Taxes\TaxRate.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Tax" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Com.Jamim.Model.Stores.Store">
+    <Position X="12" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAEAEgACgAAAAAAAAAAQAAAAAAAIAAAAAQAAAAAA=</HashCode>
+      <FileName>Stores\Store.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="StoreType" />
+      <Property Name="Status" />
+      <Property Name="Retailer" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Com.Jamim.Model.Products.Unit">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Products\Unit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Com.Jamim.Model.Products.Weight">
+    <Position X="3" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Products\Weight.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Com.Jamim.Model.Orders.OrderStatus">
+    <Position X="13.5" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAQAAAAACCgAgAAAAAAAgAIAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Orders\OrderStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Com.Jamim.Model.Retailers.RetailerCategory">
+    <Position X="9" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Retailers\RetailerCategory.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Com.Jamim.Model.Retailers.Rating">
+    <Position X="8" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAABAAIAAAAIAAAAAAAAAAE=</HashCode>
+      <FileName>Retailers\Rating.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Com.Jamim.Model.Stores.StoreType">
+    <Position X="9" Y="12.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AEBgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Stores\StoreType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Com.Jamim.Model.Stores.Status">
+    <Position X="12" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Stores\Status.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

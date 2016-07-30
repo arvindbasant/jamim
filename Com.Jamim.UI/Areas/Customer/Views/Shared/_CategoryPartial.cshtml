@@ -1,0 +1,265 @@
+﻿@using Com.Jamim.Services.Customer.ViewModels
+@model IEnumerable<CategoryView>
+<style>
+    .nav-menu {
+        width: 190px;
+        margin: 0;
+        padding: 0;
+        padding-left: 30px;
+        position: fixed;
+    }
+
+        .nav-menu > li {
+            width: 130px;
+            height: 24px;
+            margin-bottom: 1px;
+            /*border-left: 3px solid #ff6a00;
+                border-bottom: 1px solid #ff6a00;*/
+            /*transition: all 0.2s ease;*/
+            float: left;
+            list-style-type: none;
+            padding-right: 20px;
+            padding-left: 5px;
+            color: black;
+            background: url("../../../Images/menu-nav.png") no-repeat right;
+        }
+
+            .nav-menu > li:nth-child(1) {
+                border-left: 5px solid #1c758a;
+            }
+
+                .nav-menu > li:nth-child(1):hover {
+                    color: white;
+                    background: url("../../../Images/menu-nav-hover.png") no-repeat right #1c758a;
+                    box-shadow: 3px 3px 4px #000000;
+                }
+
+                .nav-menu > li:nth-child(1) .menu-tile {
+                    background-color: #1c758a;
+                }
+
+            .nav-menu > li:nth-child(2) {
+                border-left: 5px solid #94424f;
+            }
+
+                .nav-menu > li:nth-child(2):hover {
+                    color: white;
+                    background: url("../../../Images/menu-nav-hover.png") no-repeat right #94424f;
+                    box-shadow: 3px 3px 4px #000000;
+                }
+
+                .nav-menu > li:nth-child(2) .menu-tile {
+                    background-color: #94424f;
+                }
+
+            .nav-menu > li:nth-child(3) {
+                border-left: 5px solid #c78d46;
+            }
+
+                .nav-menu > li:nth-child(3):hover {
+                    color: white;
+                    background: url("../../../Images/menu-nav-hover.png") no-repeat right #c78d46;
+                    box-shadow: 3px 3px 4px #000000;
+                }
+
+            .nav-menu > li:nth-child(3) .menu-tile {
+                background-color: #c78d46;
+            }
+
+            .nav-menu > li:nth-child(4) {
+                border-left: 5px solid #cf5044;
+            }
+
+                .nav-menu > li:nth-child(4):hover {
+                    color: white;
+                    background: url("../../../Images/menu-nav-hover.png") no-repeat right #cf5044;
+                    box-shadow: 3px 3px 4px #000000;
+                }
+
+            .nav-menu > li:nth-child(4) .menu-tile {
+                background-color: #cf5044;
+            }
+
+            .nav-menu > li:nth-child(5) {
+                border-left: 5px solid #699c52;
+            }
+
+                .nav-menu > li:nth-child(5):hover {
+                    color: white;
+                    background: url("../../../Images/menu-nav-hover.png") no-repeat right #699c52;
+                    box-shadow: 3px 3px 4px #000000;
+                }
+
+            .nav-menu > li:nth-child(5) .menu-tile {
+                background-color: #699c52;
+            }
+
+            .nav-menu > li:nth-child(6) {
+                border-left: 5px solid #644172;
+            }
+
+                .nav-menu > li:nth-child(6):hover {
+                    color: white;
+                    background: url("../../../Images/menu-nav-hover.png") no-repeat right #644172;
+                    box-shadow: 3px 3px 4px #000000;
+                }
+
+            .nav-menu > li:nth-child(6) .menu-tile {
+                background-color: #644172;
+            }
+
+            .nav-menu > li:nth-child(7) {
+                border-left: 5px solid #49a88f;
+            }
+
+                .nav-menu > li:nth-child(7):hover {
+                    color: white;
+                    background: url("../../../Images/menu-nav-hover.png") no-repeat right #49a88f;
+                    box-shadow: 3px 3px 4px #000000;
+                }
+
+            .nav-menu > li:nth-child(7) .menu-tile {
+                background-color: #49a88f;
+            }
+
+            .nav-menu > li:nth-child(8) {
+                border-left: 5px solid #2b2828;
+            }
+
+                .nav-menu > li:nth-child(8):hover {
+                    color: white;
+                    background: url("../../../Images/menu-nav-hover.png") no-repeat right #2b2828;
+                    box-shadow: 3px 3px 4px #000000;
+                }
+
+            .nav-menu > li:nth-child(8) .menu-tile {
+                background-color: #2b2828;
+            }
+
+            .nav-menu > li a {
+                font-size: 0.9em;
+                text-transform: lowercase;
+                text-decoration: none;
+                /*font-weight: bold;*/
+                color: inherit;
+            }
+
+
+    .menu-tile {
+        width: 600px;
+        height: 300px;
+        display: none;
+        background-color: #808080;
+        position: absolute;
+        left: 160px;
+        top: 0;
+        z-index: 1;
+        box-shadow: 3px 3px 4px #000000;
+    }
+
+    .menu-wrapper {
+        /*box-shadow: 3px 3px 4px #000000;
+             width:80%;
+             height:450px;*/
+        position: absolute;
+        margin-top: 85px;
+        margin-left: -1px;
+        z-index: 2;
+    }
+
+    .sub-menu-title {
+        height: 40px;
+        border-bottom: 1px solid white;
+        font-weight: 100;
+        text-transform: lowercase;
+        font-size: 1em;
+    }
+
+        .sub-menu-title > div {
+            padding-left: 20px;
+        }
+
+
+
+    .submenu-wrapper {
+        width: 25%;
+        height: 85%;
+        padding-top: 40px;
+        padding-bottom: 5px;
+        float: left;
+    }
+
+        .submenu-wrapper > ul {
+            margin: 0;
+            padding: 0;
+        }
+
+            .submenu-wrapper > ul > li {
+                list-style-type: none;
+                padding-left: 10px;
+            }
+
+                .submenu-wrapper > ul > li > a {
+                    /*font-family: 'Segoe UI';*/
+                    font-size: 0.9em;
+                    letter-spacing: 0.3px;
+                    text-transform: lowercase;
+                    text-decoration: none;
+                    font-weight: 400;
+                    color: #e1e0e0;
+                    cursor: pointer;
+                }
+
+                    .submenu-wrapper > ul > li > a:hover {
+                        color: #fff;
+                    }
+
+    .clear-fix:after {
+        content: ".";
+        clear: both;
+        display: block;
+        height: 0;
+        visibility: hidden;
+    }
+
+</style>
+
+@if (Model != null)
+{
+
+    IEnumerable<CategoryView> v = from m in Model
+                                        orderby m.GroupId, m.CategoryId ascending
+                                        select m;
+    IEnumerable<string> Groups = v.Select(s => s.GroupName).Distinct();
+
+
+    <div class="menu-wrapper">
+        <ul class="nav-menu" role="menu">
+
+            @foreach (string gn in Groups)
+            {
+                <li>
+                    <a href="#">@gn</a>
+                    <div class="menu-tile">
+                        <div class="sub-menu-title">
+                            <div>@gn&hellip;</div>
+                            @*<span style="float: right"></span>*@
+                            <div class="submenu-wrapper">
+                                <ul>
+                                    @foreach (CategoryView ca in v)
+                                    {
+                                        if (gn == ca.GroupName)
+                                        {
+                                            
+                                            <li>@Html.ActionLink(@ca.CategoryName, "GetProductsByCategory", "ProductCatalog", new { categoryId = ca.CategoryId },null)</li>                                      
+                                        }
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+}

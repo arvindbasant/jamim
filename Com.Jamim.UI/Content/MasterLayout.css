@@ -1,0 +1,326 @@
+﻿
+.m-nav {
+    line-height: 35px;
+    font-size: 0.95em;
+    margin-left: 30px;
+    padding-right: 20px;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.m-title {
+    background-image: url("../../Images/expand-more.png"), url("../../Images/local-mall.png");
+    background-position: right, left;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.m-dashboard {
+    background: url("../../Images/dashboard.png") no-repeat left;
+    padding-right: 0px;
+}
+
+.m-create {
+    background-image: url("../../Images/expand-more.png"), url("../../Images/add-circle-outline.png");
+    background-position: right, left;
+    background-repeat: no-repeat;
+}
+
+.m-header {
+    height: 35px;
+    color: #fff;
+    background-color: #1c758a;
+    box-shadow: 0 2px 2px rgb(0, 0, 0);
+    z-index: 2;
+}
+
+.m-sub-header {
+    height: 35px;
+    display: none;
+    color: #fff;
+    position: absolute;
+    width: 110%;
+    z-index: 3;
+    background-color: #238ca5;
+    box-shadow: 0 2px 2px rgb(0, 0, 0);
+}
+
+.m-menu-wrapper {
+    height: 135px;
+    display: none;
+    margin-top: 35px;
+    color: #fff;
+    position: absolute;
+    width: 110%;
+    z-index: 9999;
+    background-color: #238ca5;
+    box-shadow: 0 2px 2px rgb(0, 0, 0);
+}
+
+
+.m-mode-bar {
+    margin-top: 39px;
+    padding-bottom: 2px;
+    background-color: #DAA520;
+    box-shadow: 0 2px 2px rgb(0, 0, 0);
+}
+
+.m-notification {
+    color: transparent;
+    padding: 10px;
+    background: url("../../Images/notifications.png") no-repeat center;
+}
+
+.m-settings {
+    color: transparent;
+    padding: 10px;
+    background: url("../../Images/settings.png") no-repeat center;
+}
+
+.m-order {
+    background: url("../../Images/order.png") no-repeat left;
+}
+
+.m-catalogue {
+    background: url("../../Images/catalogue.png") no-repeat left;
+}
+
+.m-customer {
+    background: url("../../Images/client.png") no-repeat left;
+}
+
+.m-review {
+    background: url("../../Images/reviews.png") no-repeat left;
+}
+
+.m-analysis {
+    background: url("../../Images/analysis.png") no-repeat left;
+}
+
+.m-report {
+    background: url("../../Images/report.png") no-repeat left;
+}
+
+body {
+    font-family: 'Segoe UI';
+    padding-bottom: 55px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.btn-xs {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 0px 2px;
+    letter-spacing: 0.5px;
+}
+
+.m-sidebar {
+    min-height: 300px;
+    width: 80px;
+    margin-top: 110px;
+    margin-left: 2px;
+    float: left;
+}
+
+.m-icon {
+    font-size: 25px;
+    cursor: pointer;
+    color: #1c758a;
+    padding-left: 2px;
+}
+
+    .m-icon:hover {
+        color: #DAA520;
+    }
+
+.m-btn-xs {
+    width: 55px;
+    text-align: left;
+}
+
+.m-btn-xss {
+    width: 80px;
+    text-align: left;
+    /*display:none;*/
+}
+
+fieldset.ScreenWrapper {
+    margin: 7px;
+    border: 1px dotted #4eb0d5;
+    padding: 5px;
+    height: 100%;
+}
+
+.ScreenCaption {
+    padding-top: 2px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #4eb0d5;
+    color: #F0F7F7;
+    border-radius: 3px;
+    font-size: .85em;
+    text-align: left;
+    width: auto;
+    margin-left: 10px;
+}
+
+.m-container {
+    margin-top: 10px;
+    padding-left: 100px;
+    padding-right: 10px;
+    height: 100vh;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.m-main-container {
+    height: 75vh;
+    z-index: 1;
+}
+
+
+.fixed-panel {
+    min-height: 530px;
+    max-height: 530px;
+    overflow-y: scroll;
+    padding: 5px;
+    border: none !important;
+}
+
+.m-panel-heading {
+    height: 22px;
+}
+
+.m-panel-title {
+    font-size: 1em;
+    line-height: 0;
+    color: #035d74 !important;
+    font-family: 'Segoe UI';
+}
+
+.scrollbox {
+    overflow-y: auto;
+    border: 1px solid #b7b7b7;
+}
+
+.track {
+    width: 9px;
+    background: rgba(0, 0, 0, 0);
+    margin-right: -20px;
+    border-radius: 10px;
+    -webkit-transition: background 250ms linear;
+    transition: background 250ms linear;
+}
+
+    .track:hover,
+    .track.dragging {
+        background: #d9d9d9;
+        background: rgba(0, 0, 0, 0.15);
+    }
+
+.handle {
+    width: 7px;
+    right: 0;
+    background: #999;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 7px;
+    -webkit-transition: width 250ms;
+    transition: width 250ms;
+}
+
+.track:hover .handle,
+.track.dragging .handle {
+    width: 9px;
+}
+
+.panel-body {
+    margin-top: 5px;
+    overflow-x: hidden !important;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+    .btn-file input[type=file] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+        font-size: 100px;
+        text-align: right;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        background: red;
+        cursor: inherit;
+        display: block;
+    }
+
+input[readonly] {
+    background-color: white !important;
+    cursor: text !important;
+}
+
+.alert-box {
+    padding: .8em;
+    border: 1px solid #ddd;
+    position: fixed;
+    margin-top: 5px;
+    width: 99.8%;
+    margin-left: 2px;
+    z-index: 9999;
+    filter: alpha(opacity=90); /* internet explorer */
+    -khtml-opacity: 0.9; /* khtml, old safari */
+    -moz-opacity: 0.9; /* mozilla, netscape */
+    opacity: 0.9; /* fx, safari, opera */
+    /*box-shadow: 0 1px 1px #b7b7b7;*/
+}
+
+    .alert-box a {
+        color: #006add;
+    }
+
+.no-border-readonly {
+    border: none;
+    background-color: transparent;
+}
+
+.grid-text {
+    border: 1px solid #b7b7b7;
+}
+
+.grid-table tr th {
+    background-color: #eeeeee;
+}
+
+.screen-title {
+    font-family: 'Segoe UI' !important;
+    font-size: 1.4em;
+    font-weight: 300 !important;
+    word-spacing: 0.7px !important;
+}
+
+    .screen-title small {
+        font-size: 65% !important;
+    }
+
+    .screen-title::first-letter {
+        font-weight: 400;
+    }
+
+#spinner {
+    background: url("../Images/progress.gif") no-repeat center;
+    margin-left: 40%;
+    margin-top: 15%;
+    display:none;
+    position: absolute;
+    z-index: 999;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+}

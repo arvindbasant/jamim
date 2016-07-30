@@ -1,0 +1,1214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A86C5CE6-3C9B-47FD-973B-725F008829D0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Com.Jamim.UI</RootNamespace>
+    <AssemblyName>Com.Jamim.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\packages\Autofac.Mvc5.3.3.4\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\External\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\External\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.1.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.1.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.1.0.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.1.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Areas\Customer\CustomerAreaRegistration.cs" />
+    <Compile Include="Areas\Retailer\RetailerAreaRegistration.cs" />
+    <Compile Include="Areas\Support\SupportAreaRegistration.cs" />
+    <Compile Include="AutofacConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="CustomerModule.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\admin-dashboard.css" />
+    <Content Include="Content\AdminLayout.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\Gridmvc.css" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\jquery-ui.min.css" />
+    <Content Include="Content\jquery.bxslider.css" />
+    <Content Include="Content\MasterLayout.css" />
+    <Content Include="Content\metisMenu.css" />
+    <Content Include="Content\morris.css" />
+    <Content Include="Content\sb-admin-2.css" />
+    <Content Include="Content\styles.css" />
+    <Content Include="Content\styles1.css" />
+    <Content Include="Content\timeline.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\open-sans\Apache License.txt" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\site.css" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\add-circle-outline.png" />
+    <Content Include="Images\add-shopping-cart.png" />
+    <Content Include="Images\analysis.png" />
+    <Content Include="Images\arrow-right.png" />
+    <Content Include="Images\bg.jpg" />
+    <Content Include="Images\bg2.jpg" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\bx_loader.gif" />
+    <Content Include="Images\call.png" />
+    <Content Include="Images\catalogue.png" />
+    <Content Include="Images\circle-down-hover.png" />
+    <Content Include="Images\circle-down.png" />
+    <Content Include="Images\circle-left-hover.png" />
+    <Content Include="Images\circle-left.png" />
+    <Content Include="Images\circle-right-hover.png" />
+    <Content Include="Images\circle-right.png" />
+    <Content Include="Images\circle-up-hover.png" />
+    <Content Include="Images\circle-up.png" />
+    <Content Include="Images\client.png" />
+    <Content Include="Images\contact-hover.png" />
+    <Content Include="Images\contact-us-hover.png" />
+    <Content Include="Images\contact-us.png" />
+    <Content Include="Images\contact.png" />
+    <Content Include="Images\controls.png" />
+    <Content Include="Images\dashboard.png" />
+    <Content Include="Images\details-white-hover.png" />
+    <Content Include="Images\details.png" />
+    <Content Include="Images\edit.png" />
+    <Content Include="Images\expand-less.png" />
+    <Content Include="Images\expand-more.png" />
+    <Content Include="Images\facebook.png" />
+    <Content Include="Images\google-plus.png" />
+    <Content Include="Images\google.png" />
+    <Content Include="Images\grocery-submenu-small.jpg" />
+    <Content Include="Images\grocery-submenu.jpg" />
+    <Content Include="Images\help.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\horlicks.jpg" />
+    <Content Include="Images\jamim-logo.JPG" />
+    <Content Include="Images\local-mall.png" />
+    <Content Include="Images\login-hover.png" />
+    <Content Include="Images\login.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\map.png" />
+    <Content Include="Images\menu-nav-hover.png" />
+    <Content Include="Images\menu-nav.png" />
+    <Content Include="Images\my-cart.png" />
+    <Content Include="Images\notifications.png" />
+    <Content Include="Images\offer.png" />
+    <Content Include="Images\options.png" />
+    <Content Include="Images\order.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Images\orders.png" />
+    <Content Include="Images\PNG\access-alarm.png" />
+    <Content Include="Images\PNG\access-alarms.png" />
+    <Content Include="Images\PNG\access-time.png" />
+    <Content Include="Images\PNG\accessibility.png" />
+    <Content Include="Images\PNG\account-balance-wallet.png" />
+    <Content Include="Images\PNG\account-balance.png" />
+    <Content Include="Images\PNG\account-box.png" />
+    <Content Include="Images\PNG\account-child.png" />
+    <Content Include="Images\PNG\account-circle.png" />
+    <Content Include="Images\PNG\adb.png" />
+    <Content Include="Images\PNG\add-alarm.png" />
+    <Content Include="Images\PNG\add-box.png" />
+    <Content Include="Images\PNG\add-circle-outline.png" />
+    <Content Include="Images\PNG\add-circle.png" />
+    <Content Include="Images\PNG\add-shopping-cart.png" />
+    <Content Include="Images\PNG\add-to-photos.png" />
+    <Content Include="Images\PNG\add.png" />
+    <Content Include="Images\PNG\adjust.png" />
+    <Content Include="Images\PNG\airplanemode-off.png" />
+    <Content Include="Images\PNG\airplanemode-on.png" />
+    <Content Include="Images\PNG\alarm-add.png" />
+    <Content Include="Images\PNG\alarm-off.png" />
+    <Content Include="Images\PNG\alarm-on.png" />
+    <Content Include="Images\PNG\alarm.png" />
+    <Content Include="Images\PNG\album.png" />
+    <Content Include="Images\PNG\android.png" />
+    <Content Include="Images\PNG\announcement.png" />
+    <Content Include="Images\PNG\apps.png" />
+    <Content Include="Images\PNG\archive.png" />
+    <Content Include="Images\PNG\arrow-back.png" />
+    <Content Include="Images\PNG\arrow-drop-down-circle.png" />
+    <Content Include="Images\PNG\arrow-drop-down.png" />
+    <Content Include="Images\PNG\arrow-drop-up.png" />
+    <Content Include="Images\PNG\arrow-forward.png" />
+    <Content Include="Images\PNG\aspect-ratio.png" />
+    <Content Include="Images\PNG\assessment.png" />
+    <Content Include="Images\PNG\assignment-ind.png" />
+    <Content Include="Images\PNG\assignment-late.png" />
+    <Content Include="Images\PNG\assignment-return.png" />
+    <Content Include="Images\PNG\assignment-returned.png" />
+    <Content Include="Images\PNG\assignment-turned-in.png" />
+    <Content Include="Images\PNG\assignment.png" />
+    <Content Include="Images\PNG\assistant-photo.png" />
+    <Content Include="Images\PNG\attach-file.png" />
+    <Content Include="Images\PNG\attach-money.png" />
+    <Content Include="Images\PNG\attachment.png" />
+    <Content Include="Images\PNG\audiotrack.png" />
+    <Content Include="Images\PNG\autorenew.png" />
+    <Content Include="Images\PNG\av-timer.png" />
+    <Content Include="Images\PNG\backspace.png" />
+    <Content Include="Images\PNG\backup.png" />
+    <Content Include="Images\PNG\battery-20.png" />
+    <Content Include="Images\PNG\battery-30.png" />
+    <Content Include="Images\PNG\battery-50.png" />
+    <Content Include="Images\PNG\battery-60.png" />
+    <Content Include="Images\PNG\battery-80.png" />
+    <Content Include="Images\PNG\battery-90.png" />
+    <Content Include="Images\PNG\battery-alert.png" />
+    <Content Include="Images\PNG\battery-charging-20.png" />
+    <Content Include="Images\PNG\battery-charging-30.png" />
+    <Content Include="Images\PNG\battery-charging-50.png" />
+    <Content Include="Images\PNG\battery-charging-60.png" />
+    <Content Include="Images\PNG\battery-charging-80.png" />
+    <Content Include="Images\PNG\battery-charging-90.png" />
+    <Content Include="Images\PNG\battery-charging-full.png" />
+    <Content Include="Images\PNG\battery-full.png" />
+    <Content Include="Images\PNG\battery-std.png" />
+    <Content Include="Images\PNG\battery-unknown.png" />
+    <Content Include="Images\PNG\beenhere.png" />
+    <Content Include="Images\PNG\block.png" />
+    <Content Include="Images\PNG\bluetooth-audio.png" />
+    <Content Include="Images\PNG\bluetooth-connected.png" />
+    <Content Include="Images\PNG\bluetooth-disabled.png" />
+    <Content Include="Images\PNG\bluetooth-searching.png" />
+    <Content Include="Images\PNG\bluetooth.png" />
+    <Content Include="Images\PNG\blur-circular.png" />
+    <Content Include="Images\PNG\blur-linear.png" />
+    <Content Include="Images\PNG\blur-off.png" />
+    <Content Include="Images\PNG\blur-on.png" />
+    <Content Include="Images\PNG\book.png" />
+    <Content Include="Images\PNG\bookmark-outline.png" />
+    <Content Include="Images\PNG\bookmark.png" />
+    <Content Include="Images\PNG\border-all.png" />
+    <Content Include="Images\PNG\border-bottom.png" />
+    <Content Include="Images\PNG\border-clear.png" />
+    <Content Include="Images\PNG\border-color.png" />
+    <Content Include="Images\PNG\border-horizontal.png" />
+    <Content Include="Images\PNG\border-inner.png" />
+    <Content Include="Images\PNG\border-left.png" />
+    <Content Include="Images\PNG\border-outer.png" />
+    <Content Include="Images\PNG\border-right.png" />
+    <Content Include="Images\PNG\border-style.png" />
+    <Content Include="Images\PNG\border-top.png" />
+    <Content Include="Images\PNG\border-vertical.png" />
+    <Content Include="Images\PNG\brightness-1.png" />
+    <Content Include="Images\PNG\brightness-2.png" />
+    <Content Include="Images\PNG\brightness-3.png" />
+    <Content Include="Images\PNG\brightness-4.png" />
+    <Content Include="Images\PNG\brightness-5.png" />
+    <Content Include="Images\PNG\brightness-6.png" />
+    <Content Include="Images\PNG\brightness-7.png" />
+    <Content Include="Images\PNG\brightness-auto.png" />
+    <Content Include="Images\PNG\brightness-high.png" />
+    <Content Include="Images\PNG\brightness-low.png" />
+    <Content Include="Images\PNG\brightness-medium.png" />
+    <Content Include="Images\PNG\brush.png" />
+    <Content Include="Images\PNG\bug-report.png" />
+    <Content Include="Images\PNG\business.png" />
+    <Content Include="Images\PNG\cached.png" />
+    <Content Include="Images\PNG\cake.png" />
+    <Content Include="Images\PNG\call-end.png" />
+    <Content Include="Images\PNG\call-made.png" />
+    <Content Include="Images\PNG\call-merge.png" />
+    <Content Include="Images\PNG\call-missed.png" />
+    <Content Include="Images\PNG\call-received.png" />
+    <Content Include="Images\PNG\call-split.png" />
+    <Content Include="Images\PNG\call.png" />
+    <Content Include="Images\PNG\camera-alt.png" />
+    <Content Include="Images\PNG\camera-front.png" />
+    <Content Include="Images\PNG\camera-rear.png" />
+    <Content Include="Images\PNG\camera-roll.png" />
+    <Content Include="Images\PNG\camera.png" />
+    <Content Include="Images\PNG\cancel.png" />
+    <Content Include="Images\PNG\cast-connected.png" />
+    <Content Include="Images\PNG\cast.png" />
+    <Content Include="Images\PNG\center-focus-strong.png" />
+    <Content Include="Images\PNG\center-focus-weak.png" />
+    <Content Include="Images\PNG\chat.png" />
+    <Content Include="Images\PNG\check-box-outline-blank.png" />
+    <Content Include="Images\PNG\check-box.png" />
+    <Content Include="Images\PNG\check.png" />
+    <Content Include="Images\PNG\chevron-left.png" />
+    <Content Include="Images\PNG\chevron-right.png" />
+    <Content Include="Images\PNG\class.png" />
+    <Content Include="Images\PNG\clear-all.png" />
+    <Content Include="Images\PNG\clear.png" />
+    <Content Include="Images\PNG\close.png" />
+    <Content Include="Images\PNG\closed-caption.png" />
+    <Content Include="Images\PNG\cloud-circle.png" />
+    <Content Include="Images\PNG\cloud-done.png" />
+    <Content Include="Images\PNG\cloud-download.png" />
+    <Content Include="Images\PNG\cloud-off.png" />
+    <Content Include="Images\PNG\cloud-queue.png" />
+    <Content Include="Images\PNG\cloud-upload.png" />
+    <Content Include="Images\PNG\cloud.png" />
+    <Content Include="Images\PNG\collections.png" />
+    <Content Include="Images\PNG\color-lens.png" />
+    <Content Include="Images\PNG\colorize.png" />
+    <Content Include="Images\PNG\comment.png" />
+    <Content Include="Images\PNG\compare.png" />
+    <Content Include="Images\PNG\computer.png" />
+    <Content Include="Images\PNG\contacts.png" />
+    <Content Include="Images\PNG\content-copy.png" />
+    <Content Include="Images\PNG\content-cut.png" />
+    <Content Include="Images\PNG\content-paste.png" />
+    <Content Include="Images\PNG\control-point-duplicate.png" />
+    <Content Include="Images\PNG\control-point.png" />
+    <Content Include="Images\PNG\create.png" />
+    <Content Include="Images\PNG\credit-card.png" />
+    <Content Include="Images\PNG\crop-16-9.png" />
+    <Content Include="Images\PNG\crop-3-2.png" />
+    <Content Include="Images\PNG\crop-5-4.png" />
+    <Content Include="Images\PNG\crop-7-5.png" />
+    <Content Include="Images\PNG\crop-din.png" />
+    <Content Include="Images\PNG\crop-free.png" />
+    <Content Include="Images\PNG\crop-landscape.png" />
+    <Content Include="Images\PNG\crop-original.png" />
+    <Content Include="Images\PNG\crop-portrait.png" />
+    <Content Include="Images\PNG\crop-square.png" />
+    <Content Include="Images\PNG\crop.png" />
+    <Content Include="Images\PNG\d-rotation.png" />
+    <Content Include="Images\PNG\dashboard.png" />
+    <Content Include="Images\PNG\data-usage.png" />
+    <Content Include="Images\PNG\dehaze.png" />
+    <Content Include="Images\PNG\delete.png" />
+    <Content Include="Images\PNG\description.png" />
+    <Content Include="Images\PNG\desktop-mac.png" />
+    <Content Include="Images\PNG\desktop-windows.png" />
+    <Content Include="Images\PNG\details.png" />
+    <Content Include="Images\PNG\developer-mode.png" />
+    <Content Include="Images\PNG\devices.png" />
+    <Content Include="Images\PNG\dialer-sip.png" />
+    <Content Include="Images\PNG\dialpad.png" />
+    <Content Include="Images\PNG\directions-bike.png" />
+    <Content Include="Images\PNG\directions-bus.png" />
+    <Content Include="Images\PNG\directions-car.png" />
+    <Content Include="Images\PNG\directions-ferry.png" />
+    <Content Include="Images\PNG\directions-subway.png" />
+    <Content Include="Images\PNG\directions-train.png" />
+    <Content Include="Images\PNG\directions-transit.png" />
+    <Content Include="Images\PNG\directions-walk.png" />
+    <Content Include="Images\PNG\directions.png" />
+    <Content Include="Images\PNG\disc-full.png" />
+    <Content Include="Images\PNG\dnd-forwardslash.png" />
+    <Content Include="Images\PNG\dnd-on.png" />
+    <Content Include="Images\PNG\dns.png" />
+    <Content Include="Images\PNG\do-not-disturb.png" />
+    <Content Include="Images\PNG\dock.png" />
+    <Content Include="Images\PNG\domain.png" />
+    <Content Include="Images\PNG\done-all.png" />
+    <Content Include="Images\PNG\done.png" />
+    <Content Include="Images\PNG\drafts.png" />
+    <Content Include="Images\PNG\drive-eta.png" />
+    <Content Include="Images\PNG\dvr.png" />
+    <Content Include="Images\PNG\edit.png" />
+    <Content Include="Images\PNG\email.png" />
+    <Content Include="Images\PNG\equalizer.png" />
+    <Content Include="Images\PNG\error.png" />
+    <Content Include="Images\PNG\event-available.png" />
+    <Content Include="Images\PNG\event-busy.png" />
+    <Content Include="Images\PNG\event-note.png" />
+    <Content Include="Images\PNG\event.png" />
+    <Content Include="Images\PNG\exit-to-app.png" />
+    <Content Include="Images\PNG\expand-less.png" />
+    <Content Include="Images\PNG\expand-more.png" />
+    <Content Include="Images\PNG\explicit.png" />
+    <Content Include="Images\PNG\explore.png" />
+    <Content Include="Images\PNG\exposure-minus-1.png" />
+    <Content Include="Images\PNG\exposure-minus-2.png" />
+    <Content Include="Images\PNG\exposure-plus-1.png" />
+    <Content Include="Images\PNG\exposure-plus-2.png" />
+    <Content Include="Images\PNG\exposure-zero.png" />
+    <Content Include="Images\PNG\exposure.png" />
+    <Content Include="Images\PNG\extension.png" />
+    <Content Include="Images\PNG\face-unlock.png" />
+    <Content Include="Images\PNG\fast-forward.png" />
+    <Content Include="Images\PNG\fast-rewind.png" />
+    <Content Include="Images\PNG\favorite-outline.png" />
+    <Content Include="Images\PNG\favorite.png" />
+    <Content Include="Images\PNG\file-download.png" />
+    <Content Include="Images\PNG\file-upload.png" />
+    <Content Include="Images\PNG\filter-1.png" />
+    <Content Include="Images\PNG\filter-2.png" />
+    <Content Include="Images\PNG\filter-3.png" />
+    <Content Include="Images\PNG\filter-4.png" />
+    <Content Include="Images\PNG\filter-5.png" />
+    <Content Include="Images\PNG\filter-6.png" />
+    <Content Include="Images\PNG\filter-7.png" />
+    <Content Include="Images\PNG\filter-8.png" />
+    <Content Include="Images\PNG\filter-9-plus.png" />
+    <Content Include="Images\PNG\filter-9.png" />
+    <Content Include="Images\PNG\filter-b-and-w.png" />
+    <Content Include="Images\PNG\filter-center-focus.png" />
+    <Content Include="Images\PNG\filter-drama.png" />
+    <Content Include="Images\PNG\filter-frames.png" />
+    <Content Include="Images\PNG\filter-hdr.png" />
+    <Content Include="Images\PNG\filter-list.png" />
+    <Content Include="Images\PNG\filter-none.png" />
+    <Content Include="Images\PNG\filter-tilt-shift.png" />
+    <Content Include="Images\PNG\filter-vintage.png" />
+    <Content Include="Images\PNG\filter.png" />
+    <Content Include="Images\PNG\find-in-page.png" />
+    <Content Include="Images\PNG\find-replace.png" />
+    <Content Include="Images\PNG\flag.png" />
+    <Content Include="Images\PNG\flare.png" />
+    <Content Include="Images\PNG\flash-auto.png" />
+    <Content Include="Images\PNG\flash-off.png" />
+    <Content Include="Images\PNG\flash-on.png" />
+    <Content Include="Images\PNG\flight.png" />
+    <Content Include="Images\PNG\flip-to-back.png" />
+    <Content Include="Images\PNG\flip-to-front.png" />
+    <Content Include="Images\PNG\flip.png" />
+    <Content Include="Images\PNG\folder-open.png" />
+    <Content Include="Images\PNG\folder-shared.png" />
+    <Content Include="Images\PNG\folder-special.png" />
+    <Content Include="Images\PNG\folder.png" />
+    <Content Include="Images\PNG\format-align-center.png" />
+    <Content Include="Images\PNG\format-align-justify.png" />
+    <Content Include="Images\PNG\format-align-left.png" />
+    <Content Include="Images\PNG\format-align-right.png" />
+    <Content Include="Images\PNG\format-bold.png" />
+    <Content Include="Images\PNG\format-clear.png" />
+    <Content Include="Images\PNG\format-color-fill.png" />
+    <Content Include="Images\PNG\format-color-reset.png" />
+    <Content Include="Images\PNG\format-color-text.png" />
+    <Content Include="Images\PNG\format-indent-decrease.png" />
+    <Content Include="Images\PNG\format-indent-increase.png" />
+    <Content Include="Images\PNG\format-ital.png" />
+    <Content Include="Images\PNG\format-line-spacing.png" />
+    <Content Include="Images\PNG\format-list-bulleted.png" />
+    <Content Include="Images\PNG\format-list-numbered.png" />
+    <Content Include="Images\PNG\format-paint.png" />
+    <Content Include="Images\PNG\format-quote.png" />
+    <Content Include="Images\PNG\format-size.png" />
+    <Content Include="Images\PNG\format-strikethrough.png" />
+    <Content Include="Images\PNG\format-textdirection-l-to-r.png" />
+    <Content Include="Images\PNG\format-textdirection-r-to-l.png" />
+    <Content Include="Images\PNG\format-underline.png" />
+    <Content Include="Images\PNG\forum.png" />
+    <Content Include="Images\PNG\forward.png" />
+    <Content Include="Images\PNG\fullscreen-exit.png" />
+    <Content Include="Images\PNG\fullscreen.png" />
+    <Content Include="Images\PNG\functions.png" />
+    <Content Include="Images\PNG\gamepad.png" />
+    <Content Include="Images\PNG\games.png" />
+    <Content Include="Images\PNG\gesture.png" />
+    <Content Include="Images\PNG\get-app.png" />
+    <Content Include="Images\PNG\gps-fixed.png" />
+    <Content Include="Images\PNG\gps-not-fixed.png" />
+    <Content Include="Images\PNG\gps-off.png" />
+    <Content Include="Images\PNG\grade.png" />
+    <Content Include="Images\PNG\gradient.png" />
+    <Content Include="Images\PNG\grain.png" />
+    <Content Include="Images\PNG\grid-off.png" />
+    <Content Include="Images\PNG\grid-on.png" />
+    <Content Include="Images\PNG\group-add.png" />
+    <Content Include="Images\PNG\group-work.png" />
+    <Content Include="Images\PNG\group.png" />
+    <Content Include="Images\PNG\hdr-off.png" />
+    <Content Include="Images\PNG\hdr-on.png" />
+    <Content Include="Images\PNG\hdr-strong.png" />
+    <Content Include="Images\PNG\hdr-weak.png" />
+    <Content Include="Images\PNG\headset-m.png" />
+    <Content Include="Images\PNG\headset.png" />
+    <Content Include="Images\PNG\healing.png" />
+    <Content Include="Images\PNG\hearing.png" />
+    <Content Include="Images\PNG\help.png" />
+    <Content Include="Images\PNG\help2.png" />
+    <Content Include="Images\PNG\high-quality.png" />
+    <Content Include="Images\PNG\highlight-remove.png" />
+    <Content Include="Images\PNG\history.png" />
+    <Content Include="Images\PNG\home.png" />
+    <Content Include="Images\PNG\hotel.png" />
+    <Content Include="Images\PNG\https.png" />
+    <Content Include="Images\PNG\image-aspect-ratio.png" />
+    <Content Include="Images\PNG\image.png" />
+    <Content Include="Images\PNG\import-export.png" />
+    <Content Include="Images\PNG\inbox.png" />
+    <Content Include="Images\PNG\info-outline.png" />
+    <Content Include="Images\PNG\info.png" />
+    <Content Include="Images\PNG\input.png" />
+    <Content Include="Images\PNG\insert-chart.png" />
+    <Content Include="Images\PNG\insert-comment.png" />
+    <Content Include="Images\PNG\insert-drive-file.png" />
+    <Content Include="Images\PNG\insert-emoticon.png" />
+    <Content Include="Images\PNG\insert-invitation.png" />
+    <Content Include="Images\PNG\insert-link.png" />
+    <Content Include="Images\PNG\insert-photo.png" />
+    <Content Include="Images\PNG\invert-colors-off.png" />
+    <Content Include="Images\PNG\invert-colors-on.png" />
+    <Content Include="Images\PNG\invert-colors.png" />
+    <Content Include="Images\PNG\iso.png" />
+    <Content Include="Images\PNG\keyboard-alt.png" />
+    <Content Include="Images\PNG\keyboard-backspace.png" />
+    <Content Include="Images\PNG\keyboard-capslock.png" />
+    <Content Include="Images\PNG\keyboard-control.png" />
+    <Content Include="Images\PNG\keyboard-hide.png" />
+    <Content Include="Images\PNG\keyboard-return.png" />
+    <Content Include="Images\PNG\keyboard-tab.png" />
+    <Content Include="Images\PNG\keyboard-voice.png" />
+    <Content Include="Images\PNG\keyboard.png" />
+    <Content Include="Images\PNG\label-outline.png" />
+    <Content Include="Images\PNG\label.png" />
+    <Content Include="Images\PNG\landscape.png" />
+    <Content Include="Images\PNG\language.png" />
+    <Content Include="Images\PNG\laptop-chromebook.png" />
+    <Content Include="Images\PNG\laptop-mac.png" />
+    <Content Include="Images\PNG\laptop-windows.png" />
+    <Content Include="Images\PNG\laptop.png" />
+    <Content Include="Images\PNG\launch.png" />
+    <Content Include="Images\PNG\layers-clear.png" />
+    <Content Include="Images\PNG\layers.png" />
+    <Content Include="Images\PNG\leak-add.png" />
+    <Content Include="Images\PNG\leak-remove.png" />
+    <Content Include="Images\PNG\lens.png" />
+    <Content Include="Images\PNG\link.png" />
+    <Content Include="Images\PNG\list.png" />
+    <Content Include="Images\PNG\live-help.png" />
+    <Content Include="Images\PNG\local-airport.png" />
+    <Content Include="Images\PNG\local-atm.png" />
+    <Content Include="Images\PNG\local-attraction.png" />
+    <Content Include="Images\PNG\local-bar.png" />
+    <Content Include="Images\PNG\local-cafe.png" />
+    <Content Include="Images\PNG\local-car-wash.png" />
+    <Content Include="Images\PNG\local-convenience-store.png" />
+    <Content Include="Images\PNG\local-drink.png" />
+    <Content Include="Images\PNG\local-florist.png" />
+    <Content Include="Images\PNG\local-gas-station.png" />
+    <Content Include="Images\PNG\local-grocery-store.png" />
+    <Content Include="Images\PNG\local-hospital.png" />
+    <Content Include="Images\PNG\local-hotel.png" />
+    <Content Include="Images\PNG\local-laundry-service.png" />
+    <Content Include="Images\PNG\local-library.png" />
+    <Content Include="Images\PNG\local-mall.png" />
+    <Content Include="Images\PNG\local-movies.png" />
+    <Content Include="Images\PNG\local-offer.png" />
+    <Content Include="Images\PNG\local-parking.png" />
+    <Content Include="Images\PNG\local-pharmacy.png" />
+    <Content Include="Images\PNG\local-phone.png" />
+    <Content Include="Images\PNG\local-pizza.png" />
+    <Content Include="Images\PNG\local-play.png" />
+    <Content Include="Images\PNG\local-post-office.png" />
+    <Content Include="Images\PNG\local-print-shop.png" />
+    <Content Include="Images\PNG\local-restaurant.png" />
+    <Content Include="Images\PNG\local-see.png" />
+    <Content Include="Images\PNG\local-shipping.png" />
+    <Content Include="Images\PNG\local-taxi.png" />
+    <Content Include="Images\PNG\location-city.png" />
+    <Content Include="Images\PNG\location-disabled.png" />
+    <Content Include="Images\PNG\location-history.png" />
+    <Content Include="Images\PNG\location-off.png" />
+    <Content Include="Images\PNG\location-on.png" />
+    <Content Include="Images\PNG\location-searching.png" />
+    <Content Include="Images\PNG\lock-open.png" />
+    <Content Include="Images\PNG\lock-outline.png" />
+    <Content Include="Images\PNG\lock.png" />
+    <Content Include="Images\PNG\looks-3.png" />
+    <Content Include="Images\PNG\looks-4.png" />
+    <Content Include="Images\PNG\looks-5.png" />
+    <Content Include="Images\PNG\looks-6.png" />
+    <Content Include="Images\PNG\looks-one.png" />
+    <Content Include="Images\PNG\looks-two.png" />
+    <Content Include="Images\PNG\looks.png" />
+    <Content Include="Images\PNG\loop.png" />
+    <Content Include="Images\PNG\loupe.png" />
+    <Content Include="Images\PNG\loyalty.png" />
+    <Content Include="Images\PNG\mail.png" />
+    <Content Include="Images\PNG\map.png" />
+    <Content Include="Images\PNG\markunread-mailbox.png" />
+    <Content Include="Images\PNG\markunread.png" />
+    <Content Include="Images\PNG\memory.png" />
+    <Content Include="Images\PNG\menu.png" />
+    <Content Include="Images\PNG\merge-type.png" />
+    <Content Include="Images\PNG\message.png" />
+    <Content Include="Images\PNG\messenger.png" />
+    <Content Include="Images\PNG\mic.png" />
+    <Content Include="Images\PNG\mms.png" />
+    <Content Include="Images\PNG\mnone.png" />
+    <Content Include="Images\PNG\mode-comment.png" />
+    <Content Include="Images\PNG\mode-edit.png" />
+    <Content Include="Images\PNG\moff.png" />
+    <Content Include="Images\PNG\mood.png" />
+    <Content Include="Images\PNG\more-horiz.png" />
+    <Content Include="Images\PNG\more-vert.png" />
+    <Content Include="Images\PNG\more.png" />
+    <Content Include="Images\PNG\mouse.png" />
+    <Content Include="Images\PNG\movie-creation.png" />
+    <Content Include="Images\PNG\movie.png" />
+    <Content Include="Images\PNG\multitrack-audio.png" />
+    <Content Include="Images\PNG\my-library-add.png" />
+    <Content Include="Images\PNG\my-library-books.png" />
+    <Content Include="Images\PNG\my-library-mus.png" />
+    <Content Include="Images\PNG\my-location.png" />
+    <Content Include="Images\PNG\nature-people.png" />
+    <Content Include="Images\PNG\nature.png" />
+    <Content Include="Images\PNG\navigate-before.png" />
+    <Content Include="Images\PNG\navigate-next.png" />
+    <Content Include="Images\PNG\navigation.png" />
+    <Content Include="Images\PNG\network-cell.png" />
+    <Content Include="Images\PNG\network-locked.png" />
+    <Content Include="Images\PNG\network-wifi.png" />
+    <Content Include="Images\PNG\new-releases.png" />
+    <Content Include="Images\PNG\nfc.png" />
+    <Content Include="Images\PNG\no-sim.png" />
+    <Content Include="Images\PNG\not-interested.png" />
+    <Content Include="Images\PNG\note-add.png" />
+    <Content Include="Images\PNG\notifications-none.png" />
+    <Content Include="Images\PNG\notifications-off.png" />
+    <Content Include="Images\PNG\notifications-on.png" />
+    <Content Include="Images\PNG\notifications-paused.png" />
+    <Content Include="Images\PNG\notifications.png" />
+    <Content Include="Images\PNG\now-wallpaper.png" />
+    <Content Include="Images\PNG\now-widgets.png" />
+    <Content Include="Images\PNG\open-in-browser.png" />
+    <Content Include="Images\PNG\open-in-new.png" />
+    <Content Include="Images\PNG\open-with.png" />
+    <Content Include="Images\PNG\pages.png" />
+    <Content Include="Images\PNG\pageview.png" />
+    <Content Include="Images\PNG\palette.png" />
+    <Content Include="Images\PNG\panorama-fisheye.png" />
+    <Content Include="Images\PNG\panorama-horizontal.png" />
+    <Content Include="Images\PNG\panorama-vertical.png" />
+    <Content Include="Images\PNG\panorama-wide-angle.png" />
+    <Content Include="Images\PNG\panorama.png" />
+    <Content Include="Images\PNG\party-mode.png" />
+    <Content Include="Images\PNG\pause-circle-fill.png" />
+    <Content Include="Images\PNG\pause-circle-outline.png" />
+    <Content Include="Images\PNG\pause.png" />
+    <Content Include="Images\PNG\payment.png" />
+    <Content Include="Images\PNG\people-outline.png" />
+    <Content Include="Images\PNG\people.png" />
+    <Content Include="Images\PNG\perm-camera-m.png" />
+    <Content Include="Images\PNG\perm-contact-cal.png" />
+    <Content Include="Images\PNG\perm-data-setting.png" />
+    <Content Include="Images\PNG\perm-device-info.png" />
+    <Content Include="Images\PNG\perm-identity.png" />
+    <Content Include="Images\PNG\perm-media.png" />
+    <Content Include="Images\PNG\perm-phone-msg.png" />
+    <Content Include="Images\PNG\perm-scan-wifi.png" />
+    <Content Include="Images\PNG\person-add.png" />
+    <Content Include="Images\PNG\person-outline.png" />
+    <Content Include="Images\PNG\person.png" />
+    <Content Include="Images\PNG\phone-android.png" />
+    <Content Include="Images\PNG\phone-bluetooth-speaker.png" />
+    <Content Include="Images\PNG\phone-forwarded.png" />
+    <Content Include="Images\PNG\phone-in-talk.png" />
+    <Content Include="Images\PNG\phone-iphone.png" />
+    <Content Include="Images\PNG\phone-locked.png" />
+    <Content Include="Images\PNG\phone-missed.png" />
+    <Content Include="Images\PNG\phone-paused.png" />
+    <Content Include="Images\PNG\phone.png" />
+    <Content Include="Images\PNG\phonelink-off.png" />
+    <Content Include="Images\PNG\phonelink.png" />
+    <Content Include="Images\PNG\photo-album.png" />
+    <Content Include="Images\PNG\photo-camera.png" />
+    <Content Include="Images\PNG\photo-library.png" />
+    <Content Include="Images\PNG\photo.png" />
+    <Content Include="Images\PNG\picture-in-picture.png" />
+    <Content Include="Images\PNG\pin-drop.png" />
+    <Content Include="Images\PNG\place.png" />
+    <Content Include="Images\PNG\play-arrow.png" />
+    <Content Include="Images\PNG\play-circle-fill.png" />
+    <Content Include="Images\PNG\play-circle-outline.png" />
+    <Content Include="Images\PNG\play-download.png" />
+    <Content Include="Images\PNG\play-install.png" />
+    <Content Include="Images\PNG\play-shopping-bag.png" />
+    <Content Include="Images\PNG\playlist-add.png" />
+    <Content Include="Images\PNG\plus-one.png" />
+    <Content Include="Images\PNG\poll.png" />
+    <Content Include="Images\PNG\polymer.png" />
+    <Content Include="Images\PNG\portable-wifi-off.png" />
+    <Content Include="Images\PNG\portrait.png" />
+    <Content Include="Images\PNG\print.png" />
+    <Content Include="Images\PNG\publ.png" />
+    <Content Include="Images\PNG\publish.png" />
+    <Content Include="Images\PNG\query-builder.png" />
+    <Content Include="Images\PNG\question-answer.png" />
+    <Content Include="Images\PNG\queue-mus.png" />
+    <Content Include="Images\PNG\queue.png" />
+    <Content Include="Images\PNG\quick-contacts-dialer.png" />
+    <Content Include="Images\PNG\quick-contacts-mail.png" />
+    <Content Include="Images\PNG\radio-button-off.png" />
+    <Content Include="Images\PNG\radio-button-on.png" />
+    <Content Include="Images\PNG\radio.png" />
+    <Content Include="Images\PNG\rate-review.png" />
+    <Content Include="Images\PNG\receipt.png" />
+    <Content Include="Images\PNG\recent-actors.png" />
+    <Content Include="Images\PNG\redeem.png" />
+    <Content Include="Images\PNG\redo.png" />
+    <Content Include="Images\PNG\refresh.png" />
+    <Content Include="Images\PNG\remove-circle-outline.png" />
+    <Content Include="Images\PNG\remove-circle.png" />
+    <Content Include="Images\PNG\remove-red-eye.png" />
+    <Content Include="Images\PNG\remove.png" />
+    <Content Include="Images\PNG\reorder.png" />
+    <Content Include="Images\PNG\repeat-one.png" />
+    <Content Include="Images\PNG\repeat.png" />
+    <Content Include="Images\PNG\replay.png" />
+    <Content Include="Images\PNG\reply-all.png" />
+    <Content Include="Images\PNG\reply.png" />
+    <Content Include="Images\PNG\report-problem.png" />
+    <Content Include="Images\PNG\report.png" />
+    <Content Include="Images\PNG\restaurant-menu.png" />
+    <Content Include="Images\PNG\restore.png" />
+    <Content Include="Images\PNG\ring-volume.png" />
+    <Content Include="Images\PNG\room.png" />
+    <Content Include="Images\PNG\rotate-left.png" />
+    <Content Include="Images\PNG\rotate-right.png" />
+    <Content Include="Images\PNG\satellite.png" />
+    <Content Include="Images\PNG\save.png" />
+    <Content Include="Images\PNG\schedule.png" />
+    <Content Include="Images\PNG\school.png" />
+    <Content Include="Images\PNG\screen-lock-landscape.png" />
+    <Content Include="Images\PNG\screen-lock-portrait.png" />
+    <Content Include="Images\PNG\screen-lock-rotation.png" />
+    <Content Include="Images\PNG\screen-rotation.png" />
+    <Content Include="Images\PNG\sd-card.png" />
+    <Content Include="Images\PNG\sd-storage.png" />
+    <Content Include="Images\PNG\search.png" />
+    <Content Include="Images\PNG\security.png" />
+    <Content Include="Images\PNG\select-all.png" />
+    <Content Include="Images\PNG\send.png" />
+    <Content Include="Images\PNG\settings-applications.png" />
+    <Content Include="Images\PNG\settings-backup-restore.png" />
+    <Content Include="Images\PNG\settings-bluetooth.png" />
+    <Content Include="Images\PNG\settings-cell.png" />
+    <Content Include="Images\PNG\settings-display.png" />
+    <Content Include="Images\PNG\settings-ethernet.png" />
+    <Content Include="Images\PNG\settings-input-antenna.png" />
+    <Content Include="Images\PNG\settings-input-component.png" />
+    <Content Include="Images\PNG\settings-input-composite.png" />
+    <Content Include="Images\PNG\settings-input-hdmi.png" />
+    <Content Include="Images\PNG\settings-input-svideo.png" />
+    <Content Include="Images\PNG\settings-overscan.png" />
+    <Content Include="Images\PNG\settings-phone.png" />
+    <Content Include="Images\PNG\settings-power.png" />
+    <Content Include="Images\PNG\settings-remote.png" />
+    <Content Include="Images\PNG\settings-system-daydream.png" />
+    <Content Include="Images\PNG\settings-voice.png" />
+    <Content Include="Images\PNG\settings.png" />
+    <Content Include="Images\PNG\share.png" />
+    <Content Include="Images\PNG\shop-two.png" />
+    <Content Include="Images\PNG\shop.png" />
+    <Content Include="Images\PNG\shopping-basket.png" />
+    <Content Include="Images\PNG\shopping-cart.png" />
+    <Content Include="Images\PNG\shuffle.png" />
+    <Content Include="Images\PNG\signal-cellular-0-bar.png" />
+    <Content Include="Images\PNG\signal-cellular-1-bar.png" />
+    <Content Include="Images\PNG\signal-cellular-2-bar.png" />
+    <Content Include="Images\PNG\signal-cellular-3-bar.png" />
+    <Content Include="Images\PNG\signal-cellular-4-bar.png" />
+    <Content Include="Images\PNG\signal-cellular-connected-no-internet-0-bar.png" />
+    <Content Include="Images\PNG\signal-cellular-connected-no-internet-1-bar.png" />
+    <Content Include="Images\PNG\signal-cellular-connected-no-internet-2-bar.png" />
+    <Content Include="Images\PNG\signal-cellular-connected-no-internet-3-bar.png" />
+    <Content Include="Images\PNG\signal-cellular-connected-no-internet-4-bar.png" />
+    <Content Include="Images\PNG\signal-cellular-no-sim.png" />
+    <Content Include="Images\PNG\signal-cellular-null.png" />
+    <Content Include="Images\PNG\signal-cellular-off.png" />
+    <Content Include="Images\PNG\signal-wifi-0-bar.png" />
+    <Content Include="Images\PNG\signal-wifi-1-bar.png" />
+    <Content Include="Images\PNG\signal-wifi-2-bar.png" />
+    <Content Include="Images\PNG\signal-wifi-3-bar.png" />
+    <Content Include="Images\PNG\signal-wifi-4-bar.png" />
+    <Content Include="Images\PNG\signal-wifi-off.png" />
+    <Content Include="Images\PNG\signal-wifi-statusbar-1-bar.png" />
+    <Content Include="Images\PNG\signal-wifi-statusbar-2-bar.png" />
+    <Content Include="Images\PNG\signal-wifi-statusbar-3-bar.png" />
+    <Content Include="Images\PNG\signal-wifi-statusbar-4-bar.png" />
+    <Content Include="Images\PNG\signal-wifi-statusbar-connected-no-internet-1.png" />
+    <Content Include="Images\PNG\signal-wifi-statusbar-connected-no-internet-2.png" />
+    <Content Include="Images\PNG\signal-wifi-statusbar-connected-no-internet-3.png" />
+    <Content Include="Images\PNG\signal-wifi-statusbar-connected-no-internet-4.png" />
+    <Content Include="Images\PNG\signal-wifi-statusbar-connected-no-internet.png" />
+    <Content Include="Images\PNG\signal-wifi-statusbar-not-connected.png" />
+    <Content Include="Images\PNG\signal-wifi-statusbar-null.png" />
+    <Content Include="Images\PNG\sim-card-alert.png" />
+    <Content Include="Images\PNG\sim-card.png" />
+    <Content Include="Images\PNG\skip-next.png" />
+    <Content Include="Images\PNG\skip-previous.png" />
+    <Content Include="Images\PNG\slideshow.png" />
+    <Content Include="Images\PNG\smartphone.png" />
+    <Content Include="Images\PNG\sms-failed.png" />
+    <Content Include="Images\PNG\sms.png" />
+    <Content Include="Images\PNG\snooze.png" />
+    <Content Include="Images\PNG\sort.png" />
+    <Content Include="Images\PNG\speaker-notes.png" />
+    <Content Include="Images\PNG\speaker.png" />
+    <Content Include="Images\PNG\spellcheck.png" />
+    <Content Include="Images\PNG\star-half.png" />
+    <Content Include="Images\PNG\star-outline.png" />
+    <Content Include="Images\PNG\star-rate.png" />
+    <Content Include="Images\PNG\star.png" />
+    <Content Include="Images\PNG\stars.png" />
+    <Content Include="Images\PNG\stay-current-landscape.png" />
+    <Content Include="Images\PNG\stay-current-portrait.png" />
+    <Content Include="Images\PNG\stay-primary-landscape.png" />
+    <Content Include="Images\PNG\stay-primary-portrait.png" />
+    <Content Include="Images\PNG\stop.png" />
+    <Content Include="Images\PNG\storage.png" />
+    <Content Include="Images\PNG\store-mall-directory.png" />
+    <Content Include="Images\PNG\store.png" />
+    <Content Include="Images\PNG\straighten.png" />
+    <Content Include="Images\PNG\style.png" />
+    <Content Include="Images\PNG\subject.png" />
+    <Content Include="Images\PNG\subtitles.png" />
+    <Content Include="Images\PNG\supervisor-account.png" />
+    <Content Include="Images\PNG\surround-sound.png" />
+    <Content Include="Images\PNG\swap-calls.png" />
+    <Content Include="Images\PNG\swap-horiz.png" />
+    <Content Include="Images\PNG\swap-vert-circle.png" />
+    <Content Include="Images\PNG\swap-vert.png" />
+    <Content Include="Images\PNG\switch-camera.png" />
+    <Content Include="Images\PNG\switch-video.png" />
+    <Content Include="Images\PNG\sync-disabled.png" />
+    <Content Include="Images\PNG\sync-problem.png" />
+    <Content Include="Images\PNG\sync.png" />
+    <Content Include="Images\PNG\system-update-tv.png" />
+    <Content Include="Images\PNG\system-update.png" />
+    <Content Include="Images\PNG\tab-unselected.png" />
+    <Content Include="Images\PNG\tab.png" />
+    <Content Include="Images\PNG\tablet-android.png" />
+    <Content Include="Images\PNG\tablet-mac.png" />
+    <Content Include="Images\PNG\tablet.png" />
+    <Content Include="Images\PNG\tag-faces.png" />
+    <Content Include="Images\PNG\tap-and-play.png" />
+    <Content Include="Images\PNG\terrain.png" />
+    <Content Include="Images\PNG\text-format.png" />
+    <Content Include="Images\PNG\textsms.png" />
+    <Content Include="Images\PNG\texture.png" />
+    <Content Include="Images\PNG\theaters.png" />
+    <Content Include="Images\PNG\thumb-down.png" />
+    <Content Include="Images\PNG\thumb-up.png" />
+    <Content Include="Images\PNG\thumbs-up-down.png" />
+    <Content Include="Images\PNG\time-to-leave.png" />
+    <Content Include="Images\PNG\timelapse.png" />
+    <Content Include="Images\PNG\timer-10.png" />
+    <Content Include="Images\PNG\timer-3.png" />
+    <Content Include="Images\PNG\timer-auto.png" />
+    <Content Include="Images\PNG\timer-off.png" />
+    <Content Include="Images\PNG\timer.png" />
+    <Content Include="Images\PNG\toc.png" />
+    <Content Include="Images\PNG\today.png" />
+    <Content Include="Images\PNG\tonality.png" />
+    <Content Include="Images\PNG\track-changes.png" />
+    <Content Include="Images\PNG\traff.png" />
+    <Content Include="Images\PNG\transform.png" />
+    <Content Include="Images\PNG\translate.png" />
+    <Content Include="Images\PNG\trending-down.png" />
+    <Content Include="Images\PNG\trending-neutral.png" />
+    <Content Include="Images\PNG\trending-up.png" />
+    <Content Include="Images\PNG\tune.png" />
+    <Content Include="Images\PNG\turned-in-not.png" />
+    <Content Include="Images\PNG\turned-in.png" />
+    <Content Include="Images\PNG\tv.png" />
+    <Content Include="Images\PNG\undo.png" />
+    <Content Include="Images\PNG\unfold-less.png" />
+    <Content Include="Images\PNG\unfold-more.png" />
+    <Content Include="Images\PNG\usb.png" />
+    <Content Include="Images\PNG\verified-user.png" />
+    <Content Include="Images\PNG\vertical-align-bottom.png" />
+    <Content Include="Images\PNG\vertical-align-center.png" />
+    <Content Include="Images\PNG\vertical-align-top.png" />
+    <Content Include="Images\PNG\vibration.png" />
+    <Content Include="Images\PNG\video-collection.png" />
+    <Content Include="Images\PNG\videocam-off.png" />
+    <Content Include="Images\PNG\videocam.png" />
+    <Content Include="Images\PNG\view-agenda.png" />
+    <Content Include="Images\PNG\view-array.png" />
+    <Content Include="Images\PNG\view-carousel.png" />
+    <Content Include="Images\PNG\view-column.png" />
+    <Content Include="Images\PNG\view-day.png" />
+    <Content Include="Images\PNG\view-headline.png" />
+    <Content Include="Images\PNG\view-list.png" />
+    <Content Include="Images\PNG\view-module.png" />
+    <Content Include="Images\PNG\view-quilt.png" />
+    <Content Include="Images\PNG\view-stream.png" />
+    <Content Include="Images\PNG\view-week.png" />
+    <Content Include="Images\PNG\visibility-off.png" />
+    <Content Include="Images\PNG\visibility.png" />
+    <Content Include="Images\PNG\voice-chat.png" />
+    <Content Include="Images\PNG\voicemail.png" />
+    <Content Include="Images\PNG\volume-down.png" />
+    <Content Include="Images\PNG\volume-mute.png" />
+    <Content Include="Images\PNG\volume-off.png" />
+    <Content Include="Images\PNG\volume-up.png" />
+    <Content Include="Images\PNG\vpn-key.png" />
+    <Content Include="Images\PNG\vpn-lock.png" />
+    <Content Include="Images\PNG\wallet-giftcard.png" />
+    <Content Include="Images\PNG\wallet-membership.png" />
+    <Content Include="Images\PNG\wallet-travel.png" />
+    <Content Include="Images\PNG\warning.png" />
+    <Content Include="Images\PNG\watch.png" />
+    <Content Include="Images\PNG\wb-auto.png" />
+    <Content Include="Images\PNG\wb-cloudy.png" />
+    <Content Include="Images\PNG\wb-incandescent.png" />
+    <Content Include="Images\PNG\wb-irradescent.png" />
+    <Content Include="Images\PNG\wb-sunny.png" />
+    <Content Include="Images\PNG\web.png" />
+    <Content Include="Images\PNG\whatshot.png" />
+    <Content Include="Images\PNG\wifi-lock.png" />
+    <Content Include="Images\PNG\wifi-tethering.png" />
+    <Content Include="Images\PNG\work.png" />
+    <Content Include="Images\PNG\wrap-text.png" />
+    <Content Include="Images\progress.gif" />
+    <Content Include="Images\register-hover.png" />
+    <Content Include="Images\register.png" />
+    <Content Include="Images\report.png" />
+    <Content Include="Images\retail-white-hover.png" />
+    <Content Include="Images\retailer-hover.png" />
+    <Content Include="Images\retailer.png" />
+    <Content Include="Images\review.png" />
+    <Content Include="Images\reviews.png" />
+    <Content Include="Images\rupee-symbol.png" />
+    <Content Include="Images\search.png" />
+    <Content Include="Images\settings.png" />
+    <Content Include="Images\shipper-hover.png" />
+    <Content Include="Images\shipper.png" />
+    <Content Include="Images\shopping-bag.png" />
+    <Content Include="Images\shopping-basket.png" />
+    <Content Include="Images\shopping-cart.png" />
+    <Content Include="Images\spinner.gif" />
+    <Content Include="Images\store-01.jpg" />
+    <Content Include="Images\store-02.jpg" />
+    <Content Include="Images\store-03.jpg" />
+    <Content Include="Images\tile1.jpg" />
+    <Content Include="Images\tile2.jpg" />
+    <Content Include="Images\tile3.jpg" />
+    <Content Include="Images\tile4.jpg" />
+    <Content Include="Images\tile5.jpg" />
+    <Content Include="Images\tile6.png" />
+    <Content Include="Images\twitter.png" />
+    <Content Include="Images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Images\violate.jpg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Customer\Views\Home\Stores.cshtml" />
+    <Content Include="Areas\Customer\Views\Home\test.cshtml" />
+    <Content Include="Areas\Customer\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Customer\Views\web.config" />
+    <Content Include="Areas\Retailer\Views\web.config" />
+    <Content Include="Areas\Support\Views\web.config" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\open-sans\OpenSans-Bold.ttf" />
+    <Content Include="fonts\open-sans\OpenSans-BoldItalic.ttf" />
+    <Content Include="fonts\open-sans\OpenSans-ExtraBold.ttf" />
+    <Content Include="fonts\open-sans\OpenSans-ExtraBoldItalic.ttf" />
+    <Content Include="fonts\open-sans\OpenSans-Italic.ttf" />
+    <Content Include="fonts\open-sans\OpenSans-Light.ttf" />
+    <Content Include="fonts\open-sans\OpenSans-LightItalic.ttf" />
+    <Content Include="fonts\open-sans\OpenSans-Regular.ttf" />
+    <Content Include="fonts\open-sans\OpenSans-Semibold.ttf" />
+    <Content Include="fonts\open-sans\OpenSans-SemiboldItalic.ttf" />
+    <Content Include="Areas\Customer\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Customer\Views\Location\Index.cshtml" />
+    <Content Include="Areas\Customer\Views\Store\Index.cshtml" />
+    <Content Include="Areas\Customer\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Customer\Views\Shared\_CatalogLayout.cshtml" />
+    <Content Include="Areas\Customer\Views\Shared\_CategoryPartial.cshtml" />
+    <Content Include="Areas\Customer\Views\ProductCatalog\ProductSearchResultView.cshtml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Retailer\Views\Shared\" />
+    <Folder Include="Areas\Support\Views\Shared\" />
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Com.Jamim.Controllers\Com.Jamim.Controllers.csproj">
+      <Project>{6a4d5af9-ff00-4419-88e2-208e25b00b27}</Project>
+      <Name>Com.Jamim.Controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Com.Jamim.Infrastructure\Com.Jamim.Infrastructure.csproj">
+      <Project>{527dfc45-2ce0-4000-8ec1-616df9256036}</Project>
+      <Name>Com.Jamim.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Com.Jamim.Model\Com.Jamim.Model.csproj">
+      <Project>{b1fec499-8446-482a-9707-d51bdeb5e1f1}</Project>
+      <Name>Com.Jamim.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Com.Jamim.Repository\Com.Jamim.Repository.csproj">
+      <Project>{fb35fba9-2a51-45c8-acf0-3f1242b1700b}</Project>
+      <Name>Com.Jamim.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Com.Jamim.Services.Cache\Com.Jamim.Services.Cache.csproj">
+      <Project>{24c4f65a-56bf-4926-b869-9b4246f6330a}</Project>
+      <Name>Com.Jamim.Services.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Com.Jamim.Services\Com.Jamim.Services.csproj">
+      <Project>{8f117f23-c07a-4c09-8462-55258c3b011b}</Project>
+      <Name>Com.Jamim.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1363</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1363/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

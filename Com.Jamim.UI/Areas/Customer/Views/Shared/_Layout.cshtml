@@ -1,0 +1,311 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Get Your Grocery</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            font-family: 'Segoe UI';
+        }
+
+        .search-box-wrap {
+            padding-top: 15px;
+           
+        }
+
+        .search-box {
+            background-color: #fff;
+            border: 1px solid #e2e2e2;
+            border-right: 0;
+            border-radius: 2px 0 0 2px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            height: 32px;
+            outline: none;
+            padding: 0 7px;
+            width: 350px;
+            vertical-align: top;
+            margin-top: 15px;
+            /*box-shadow: 0 2px px rgba(0,0,0,0.3);*/
+        }
+
+            .search-box:hover, .search-box:active, .search-box:focus {
+                border: 1px solid #3ec9c3;
+                border-right: none;
+            }
+
+        .searchbutton {
+            background: url("../../Images/search.png") no-repeat #3ec9c3 center;
+            border: 0;
+            border-radius: 0 2px 2px 0;
+            height: 32px;
+            margin-left: -4px;
+            text-align: center;
+            top: 0;
+            vertical-align: top;
+            outline: none;
+            width: 50px;
+            z-index: -1;
+            -webkit-transition: margin-left 200ms ease-out 0;
+            transition: margin-left 200ms ease-out 0;
+            margin-top: 15px;
+        }
+
+            .searchbutton::after {
+                background: url("../Images/search.png") no-repeat;
+            }
+
+            .searchbutton:hover, .searchbutton:active, .searchbutton:focus {
+                background-color: #34a7a2;
+            }
+
+            .searchbutton:active {
+                border: 1px dotted white;
+            }
+
+        .j-logo {
+            font-family: 'Segoe UI';
+            font-size: 2.2em;
+            letter-spacing: 0.2px;
+            font-weight: 600;
+            /*font-style:italic;*/
+            color: #3ec9c3;
+            padding-top: 10px;
+            padding-right: 20px;
+            padding-left: 60px;
+        }
+
+        .j-icon {
+            color: gray;
+            background: url(../../Images/shopping-bag.png) center no-repeat;
+        }
+
+        .nav > li > a {
+            padding-left: 2px;
+            padding-right: 2px;
+            padding-top: 20px;
+            margin-right: 30px;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            font-weight: 600;
+            color: #666;
+        }
+
+            .nav > li > a:hover, .nav > li > a:focus {
+                background-color: transparent;
+                border-bottom: 2px solid #3ec9c3;
+            }
+
+        .icon-md {
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        .menu-icon {
+            color: #34a7a2;
+            padding-top: 20px;
+        }
+
+        .top-header {
+            height: 55px;
+            background-color: #fff;
+            /*border-bottom:1px solid #eee;*/
+        }
+
+        .body-container {
+            margin-top: 100px;
+        }
+
+        #login a {
+            outline: none;
+        }
+
+        #sidebar-wrapper {
+            z-index: 9999;
+            position: fixed;
+            top: 0;
+            right: 250px;
+            width: 0;
+            height: 100%;
+            margin-right: -250px;
+            overflow-y: auto;
+            background-color: rgba(0,0,0,0.7);
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+            -webkit-box-shadow: 0 5px 5px #000000;
+            -moz-box-shadow: 0 5px 5px #000000;
+            -o-box-shadow: 0 5px 5px #000000;
+            box-shadow: 0 5px 5px #000000;
+        }
+
+        #main-wrapper.toggled {
+            /*width: 350px;*/
+        }
+
+            #main-wrapper.toggled #sidebar-wrapper {
+                width: 250px;
+            }
+
+        .sidebar-nav {
+            position: absolute;
+            top: 0;
+            width: 250px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            background-color: #fff;
+            right: 0;
+            height: 100vh;
+        }
+
+            .sidebar-nav li {
+                text-indent: 20px;
+                line-height: 40px;
+                margin-left:20px;
+            }
+
+                .sidebar-nav li a {
+                    display: block;
+                    text-decoration: none;
+                    color: #797979;
+
+                }
+
+                    .sidebar-nav li a:hover {
+                        text-decoration: none;
+                        color: #34a7a2;
+                        background: rgba(255,255,255,0.2);
+                    }
+
+                    .sidebar-nav li a:active,
+                    .sidebar-nav li a:focus {
+                        text-decoration: none;
+                    }
+
+            .sidebar-nav > .sidebar-brand {
+                height: 65px;
+                font-size: 30px;
+                line-height: 60px;
+                padding-right: 20px;
+            }
+
+                .sidebar-nav > .sidebar-brand a {
+                    color: #000000;
+                }
+
+                    .sidebar-nav > .sidebar-brand a:hover {
+                        color: #151515;
+                        background: none;
+                    }
+    </style>
+</head>
+<body>
+    <div id="main-wrapper">
+
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#" id="close" class="pull-right">&times;</a>
+                </li>
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#">Shortcuts</a>
+                </li>
+                <li>
+                    <a href="#">Overview</a>
+                </li>
+                <li>
+                    <a href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar navbar-fixed-top top-header">
+            <div class="row">
+                <div class="col-md-2 j-logo">Jamim</div>
+                <div class="col-md-3 form-inline">
+                    <input type="text" id="search" class="search-box" />                 
+                </div>
+                <div class="col-md-1">
+                    <input type="button" class="searchbutton" />
+                </div>
+                <div class="col-md-2">
+                    <select class="btn btn-sm" style="outline:none; margin-top:15px;">
+                        <option value="DEL">DELHI</option>
+                        <option value="MUM">MUMBAI</option>
+                        <option value="KOL">KOLKATA</option>
+                        <option value="CHN">CHENNAI</option>
+                        <option value="BAN">BANGLORE</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <section id="login">
+                        @*@Html.Partial("~/Areas/Common/Views/Shared/_LoginPartial.cshtml")*@
+                    </section>
+                </div>
+                <div class="col-md-1">
+                    <span class="glyphicon glyphicon-menu-hamburger icon-md menu-icon" id="menu-toggle"></span>
+                </div>
+            </div>
+        </div>
+        <div id="wrapper">
+            <div id="body" class="container body-container">
+
+                @RenderBody()
+
+            </div>
+            <footer style="display:none">
+                <div class="content-wrapper">
+                    <div style="float: left; width: 15%; height: 40px; font-size: 0.8em; font-weight: bold;">
+                        <p>&copy; @DateTime.Now.Year - Jamim Inc</p>
+                    </div>
+                    <div style="float: left; width: 60%; height: 40px;">
+
+                        <nav style="text-align: center; padding-top: 10px;">
+
+                            @Html.ActionLink("retailer", "Indexx", "Catalogue", new { area = "Administrator" }, new { @Class = "retailer", @style = "text-decoration:none" })
+                            @Html.ActionLink("shipper", "a", "a", new { area = "Administrator" }, new { @Class = "shipper", @style = "text-decoration:none" })
+                            @*@Html.ActionLink("about", "a", "a", new { area = "Administrator" }, new { @Class = "about", @style="text-decoration:none"})*@
+                            @Html.ActionLink("contact us", "a", "a", new { area = "Administrator" }, new { @Class = "contact", @style = "text-decoration:none" })
+
+
+                        </nav>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#main-wrapper").toggleClass("toggled");
+        });
+        $("#close").click(function (e) {
+            e.preventDefault();
+            $("#main-wrapper").toggleClass("toggled");
+        });
+    </script>
+</body>
+</html>
